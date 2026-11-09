@@ -4,7 +4,7 @@ Flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examinati
 
 **Open: <https://kerwinarlan.github.io/dost-sei-reviewer/>**
 
-440 cards, offline, no account. Built for one tutee sitting the exam on **15 Nov 2026**.
+470 cards, offline, no account. Built for one tutee sitting the exam on **15 Nov 2026**.
 
 ---
 
@@ -31,13 +31,14 @@ Total: 180 minutes. Part I carries two domains inside one 45-minute block.
 | Physics | II | 55 | `deck/science-physics.json` |
 | Earth and Space Science | II | 40 | `deck/science-earth-space.json` |
 | Verbal and Language | I | 80 | `deck/verbal-language.json` |
-| Abstract Reasoning | I | 70 | `deck/abstract-reasoning.json` |
-| **Total** | | **440** | |
+| Abstract Reasoning: mechanical and spatial | I | 70 | `deck/abstract-reasoning.json` |
+| Abstract Reasoning: series, coding, odd one out | I | 30 | `deck/abstract-extra.json` |
+| **Total** | | **470** | |
 
 Every card carries a worked answer, the trap a student usually falls into, and a difficulty mark. 30 percent easy, 50 percent moderate, 20 percent hard.
 
-Formula cheatsheet: [`cheatsheet.md`](cheatsheet.md). Twelve sections, 259 lines, one formula per line.
-Six-day schedule: [`PLAN.md`](PLAN.md). One domain per day, with the daily loop.
+Formula cheatsheet: [`cheatsheet.md`](cheatsheet.md). Twelve sections, 264 lines, one formula per line.
+Six-day schedule: [`PLAN.md`](PLAN.md). One track per day, with the daily loop.
 
 ## Use it
 
@@ -73,7 +74,7 @@ node test.mjs    # headless Chrome check, writes shots/
 ## Repo layout
 
 ```
-index.html          generated single-file app, 440 cards inlined
+index.html          generated single-file app, 470 cards inlined
 src/app.html        app template, DECK marker
 deck/*.json         card source, one file per deck
 deck/SCHEMA.md      card contract
@@ -88,7 +89,7 @@ shots/              test screenshots, gitignored
 
 ## How the content was checked
 
-Seven writers produced one deck each against a fixed card contract. Three independent verifiers then re-solved the cards by subject and fixed errors in place. `build.mjs` rejects duplicate ids, answers missing from the choices, ragged grids, and missing explanations. `test.mjs` drives a real browser: it loads the deck, answers one card wrong and one right, checks requeue and scoring, reloads to confirm saved progress, and checks the 390 px layout for overflow.
+Eight writers produced one deck each against a fixed card contract. Three independent verifiers then re-solved the cards by subject and fixed errors in place. `build.mjs` rejects duplicate ids, answers missing from the choices, ragged grids, and missing explanations. `test.mjs` drives a real browser: it loads the deck, answers one card wrong and one right, checks requeue and scoring, reloads to confirm saved progress, and checks the 390 px layout for overflow.
 
 ## Honesty note
 
@@ -99,6 +100,7 @@ Seven writers produced one deck each against a fixed card contract. Three indepe
 ## Known limits
 
 - Spatial items use character grids, not rendered 3D figures. Nets, rotation, reflection, and folding work in that format. Block-stack items are worded.
+- Figure matrices and figural analogies are not included. Series, coding, and numeric odd-one-out cover the text form.
 - In study mode the clock only shows elapsed time. Use the timed mock for a forced stop.
 - The timed mock uses 40 items per part. The real item count is not public, so the per-item pace is a practice pace, not a claim about the booklet.
 - One explanation per card. No separate worked solution sheet.

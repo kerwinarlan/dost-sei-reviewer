@@ -74,6 +74,15 @@ try {
   check('home renders domains', shown >= 2, `${shown} domains`);
   await shot('01-home.png');
 
+  const groups = await ev(`[...document.querySelectorAll('[data-group]')].map(b => b.dataset.group)`);
+  check('abstract reasoning is its own track', groups.includes('Abstract Reasoning'), groups.join(', '));
+  await ev(`document.querySelector('[data-group="Abstract Reasoning"]').click()`);
+  await wait(300);
+  const absN = await ev(`ses ? ses.queue.length : 0`);
+  check('abstract track session loads', absN > 60, `${absN} cards`);
+  await ev(`document.querySelector('[data-act="exit"]').click()`);
+  await wait(200);
+
   await ev(`document.getElementById('start').click()`);
   await wait(250);
   const q = await ev(`document.querySelector('.q')?.textContent || ''`);

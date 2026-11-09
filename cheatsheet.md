@@ -247,6 +247,11 @@ Pace: seconds per item = part seconds / items in the part. Divide by 60 for minu
 - Cube net: faces in a row with one face between are opposite
 - Rotation keeps handedness, mirror reverses it
 - Paper fold: holes = punches x layers pierced
+- Number series order: differences, then ratios, then squares or cubes, then two interleaved sequences
+- Differences of differences constant means a quadratic pattern
+- Letter series: convert to numbers, A = 1 to Z = 26, then treat as a number series
+- Coding: shift = coded letter position minus plain letter position, checked on every letter
+- Odd one out: name the shared property first, then test each option against it
 
 ## 12. Exam tactics
 

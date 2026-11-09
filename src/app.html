@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f6f4ef">
 <title>DOST-SEI Reviewer</title>
-<meta name="description" content="Offline flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examination. 440 cards across Mathematics, Science, Creative Reasoning, and Language.">
+<meta name="description" content="Offline flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examination. 470 cards across Mathematics, Science, Abstract Reasoning, Verbal Reasoning, and Language.">
 <meta property="og:title" content="DOST-SEI Reviewer">
-<meta property="og:description" content="440 offline flashcards and a formula cheatsheet for the DOST-SEI Scholarship Examination.">
+<meta property="og:description" content="470 offline flashcards and a formula cheatsheet for the DOST-SEI Scholarship Examination.">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -45,6 +45,7 @@ h2.sec{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--
 .stat-row .r1{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .stat-row .nm{font-weight:600}
 .stat-row .ct{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stat-row .note{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 .bar{height:4px;border-radius:99px;background:var(--line);margin-top:9px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
 footer{margin-top:30px;color:var(--muted);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding-top:14px}
@@ -154,6 +155,14 @@ const KEY = 'dost.v1';
 const PART_LABEL = {I:'Creative Reasoning + Language', II:'Science', III:'Mathematics'};
 const PART_MIN = {I:45, II:65, III:70};
 const MOCK_PER_PART = 40;
+const VERBAL_SUBS = new Set(['Analogies','Odd One Out','Syllogisms and Logical Deduction','Sentence Completion','Vocabulary in Context']);
+const GROUP_NOTE = {
+  'Abstract Reasoning': 'Mechanical · Spatial · series · coding',
+  'Verbal Reasoning': 'Analogies · logic · vocabulary',
+  'Language and Literature': 'Grammar · reading · literature',
+  'Science': 'Biology · Chemistry · Physics · Earth · Space',
+  'Mathematics': 'Algebra · geometry · trig · stats · calculus',
+};
 const EXAM = '2026-11-15T00:00:00+08:00';
 
 let S = load();
@@ -194,11 +203,16 @@ function mmssUp(ms){
 function daysLeft(){
   return Math.ceil((new Date(EXAM) - Date.now()) / 864e5);
 }
-function domainsOf(part){
+function groupOf(c){
+  if(c.domain === 'Creative Reasoning') return VERBAL_SUBS.has(c.sub) ? 'Verbal Reasoning' : 'Abstract Reasoning';
+  return c.domain;
+}
+function groupsOf(part){
   const m = new Map();
   for(const c of DECK){
     if(part !== 'all' && c.part !== part) continue;
-    m.set(c.domain, (m.get(c.domain)||0) + 1);
+    const g = groupOf(c);
+    m.set(g, (m.get(g)||0) + 1);
   }
   return [...m.entries()];
 }
@@ -233,12 +247,13 @@ function homeHTML(){
   const left = daysLeft();
   const total = DECK.length;
   const parts = ['all','I','II','III'];
-  const rows = domainsOf(pickPart).map(([d, n]) => {
-    const ids = DECK.filter(c => c.domain === d && (pickPart === 'all' || c.part === pickPart));
+  const rows = groupsOf(pickPart).map(([g, n]) => {
+    const ids = DECK.filter(c => groupOf(c) === g && (pickPart === 'all' || c.part === pickPart));
     const m = ids.filter(c => (S.cards[c.id]?.box || 0) >= 3).length;
     const pct = n ? Math.round(100 * m / n) : 0;
-    return `<button class="stat-row" data-domain="${esc(d)}" data-part="${esc(ids[0]?.part || 'all')}">
-      <span class="r1"><span class="nm">${esc(d)}</span><span class="ct">${m}/${n}</span></span>
+    return `<button class="stat-row" data-group="${esc(g)}">
+      <span class="r1"><span class="nm">${esc(g)}</span><span class="ct">${m}/${n}</span></span>
+      <span class="note">${esc(GROUP_NOTE[g] || '')}</span>
       <span class="bar"><i style="width:${pct}%"></i></span>
     </button>`;
   }).join('');
@@ -258,7 +273,7 @@ function homeHTML(){
     </div>
     <button class="btn primary" id="start">Study ${n} cards</button>
     <button class="btn" id="mock" style="margin-top:10px">Timed mock exam</button>
-    <h2 class="sec">Domains${pickPart === 'all' ? '' : ' · Part ' + pickPart}</h2>
+    <h2 class="sec">Tracks${pickPart === 'all' ? '' : ' · Part ' + pickPart}</h2>
     ${rows || '<p class="sub">No cards yet.</p>'}
     <footer>
       ${total} cards · ${mastered()} mastered · progress saves on this device.<br>
@@ -317,7 +332,7 @@ function studyHTML(){
     <div class="wrap">
       <div class="qcard">
         <div class="meta">
-          <span>${partName}</span><span class="dot"></span><span>${esc(c.domain)}</span>
+          <span>${partName}</span><span class="dot"></span><span>${esc(groupOf(c))}</span>
         </div>
         <div class="subtle">
           <span>${esc(c.sub || '')}</span>
@@ -637,8 +652,12 @@ function bind(){
   const start = document.getElementById('start');
   if(start) start.onclick = () => startSession(pickPart, 'all');
 
-  document.querySelectorAll('[data-domain]').forEach(b =>
-    b.onclick = () => startSession(b.dataset.part, b.dataset.domain));
+  document.querySelectorAll('[data-group]').forEach(b =>
+    b.onclick = () => {
+      const g = b.dataset.group;
+      const ids = DECK.filter(c => groupOf(c) === g && (pickPart === 'all' || c.part === pickPart)).map(c => c.id);
+      startSession('all', 'all', ids);
+    });
 
   const reset = document.getElementById('reset');
   if(reset) reset.onclick = () => {
