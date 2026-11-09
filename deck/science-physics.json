@@ -1,0 +1,558 @@
+{
+  "part": "II",
+  "domain": "Science",
+  "cards": [
+    {
+      "id": "phys-001",
+      "sub": "Kinematics",
+      "q": "A runner starts from rest and reaches 8 m/s in 4 s. What is the average acceleration?",
+      "choices": ["0.5 m/s^2", "2 m/s^2", "4 m/s^2", "32 m/s^2"],
+      "answer": "2 m/s^2",
+      "why": "a = (v - v_0)/t = (8 - 0)/4 = 2 m/s^2.",
+      "trap": "Dividing 4 s by 8 m/s and reporting 0.5 m/s^2.",
+      "diff": 1
+    },
+    {
+      "id": "phys-002",
+      "sub": "Kinematics",
+      "q": "A shopper walks 300 m east, then turns and walks 100 m west. What is the displacement?",
+      "choices": ["200 m east", "200 m west", "400 m east", "400 m west"],
+      "answer": "200 m east",
+      "why": "Displacement = 300 - 100 = 200 m east. Distance is the total path, 400 m.",
+      "trap": "Adding both legs to get 400 m and calling it displacement.",
+      "diff": 1
+    },
+    {
+      "id": "phys-003",
+      "sub": "Kinematics",
+      "q": "A stone is dropped from rest and falls for 3 s. How far does it fall? Use g = 9.8 m/s^2.",
+      "choices": ["14.7 m", "29.4 m", "44.1 m", "88.2 m"],
+      "answer": "44.1 m",
+      "why": "d = 0.5*g*t^2 = 0.5*9.8*3^2 = 44.1 m.",
+      "trap": "Using d = g*t^2 and dropping the 0.5 to get 88.2 m.",
+      "diff": 2
+    },
+    {
+      "id": "phys-004",
+      "sub": "Kinematics",
+      "q": "A ball is thrown straight up at 20 m/s. How long until it returns to the thrower's hand? Use g = 9.8 m/s^2.",
+      "choices": ["2.0 s", "4.1 s", "4.9 s", "8.2 s"],
+      "answer": "4.1 s",
+      "why": "Rise time = v/g = 20/9.8 = 2.04 s. Total time = 2*2.04 = 4.1 s.",
+      "trap": "Reporting only the rise time, 2.0 s.",
+      "diff": 2
+    },
+    {
+      "id": "phys-005",
+      "sub": "Motion Graphs",
+      "q": "The grid plots position (vertical) against time (horizontal). The plotted line is flat. What is the object doing?",
+      "choices": ["At rest", "Moving at constant speed", "Accelerating", "Moving backward"],
+      "answer": "At rest",
+      "why": "Position does not change. Velocity is the slope of a position-time graph, and here the slope is zero.",
+      "trap": "Reading the flat line as constant speed because the line is horizontal.",
+      "diff": 1,
+      "grid": ["..........", "..........", "##########", "..........", "..........", ".........."]
+    },
+    {
+      "id": "phys-006",
+      "sub": "Motion Graphs",
+      "q": "A velocity-time graph shows a constant 6 m/s for 4 s. What displacement does the area under the line give?",
+      "choices": ["1.5 m", "10 m", "24 m", "48 m"],
+      "answer": "24 m",
+      "why": "Area = height*width = 6 m/s * 4 s = 24 m.",
+      "trap": "Computing the slope 6/4 and reporting 1.5 m.",
+      "diff": 2
+    },
+    {
+      "id": "phys-007",
+      "sub": "Motion Graphs",
+      "q": "The grid shows a velocity-time graph: a straight line rises from 0 to 20 m/s over 5 s. What is the acceleration?",
+      "choices": ["0.25 m/s^2", "4 m/s^2", "5 m/s^2", "100 m/s^2"],
+      "answer": "4 m/s^2",
+      "why": "Acceleration is the slope: a = (20 - 0)/5 = 4 m/s^2.",
+      "trap": "Dividing time by speed to get 0.25 m/s^2.",
+      "diff": 2,
+      "grid": [".........#", "........#.", ".......#..", "......#...", ".....#....", "....#....."]
+    },
+    {
+      "id": "phys-008",
+      "sub": "Kinematics",
+      "q": "A car travels 150 m north in 5 s. What is its average velocity?",
+      "choices": ["30 m/s north", "30 m/s south", "750 m/s north", "0.03 m/s north"],
+      "answer": "30 m/s north",
+      "why": "v = d/t = 150/5 = 30 m/s north.",
+      "trap": "Multiplying 150 by 5 to get 750 m/s.",
+      "diff": 1
+    },
+    {
+      "id": "phys-009",
+      "sub": "Kinematics",
+      "q": "A car moving at 20 m/s brakes and stops in 50 m. What is its deceleration?",
+      "choices": ["0.4 m/s^2", "4 m/s^2", "8 m/s^2", "10 m/s^2"],
+      "answer": "4 m/s^2",
+      "why": "v^2 = v_0^2 + 2ad gives 0 = 400 + 2a(50). a = -4 m/s^2, so deceleration is 4 m/s^2.",
+      "trap": "Dividing 20 by 50 to get 0.4 m/s^2.",
+      "diff": 2
+    },
+    {
+      "id": "phys-010",
+      "sub": "Kinematics",
+      "q": "A bus covers 120 m in 10 s, then 180 m in 20 s. What is its average speed for the whole trip?",
+      "choices": ["9 m/s", "10 m/s", "10.5 m/s", "12 m/s"],
+      "answer": "10 m/s",
+      "why": "Average speed = total distance/total time = (120 + 180)/(10 + 20) = 300/30 = 10 m/s.",
+      "trap": "Averaging the two speeds, 12 and 9, to get 10.5 m/s.",
+      "diff": 2
+    },
+    {
+      "id": "phys-011",
+      "sub": "Kinematics",
+      "q": "A coin is dropped from rest. How long does it take to fall 20 m? Use g = 9.8 m/s^2.",
+      "choices": ["1.4 s", "2.0 s", "4.1 s", "20 s"],
+      "answer": "2.0 s",
+      "why": "d = 0.5*g*t^2 gives 20 = 4.9t^2. t^2 = 4.08, so t = 2.0 s.",
+      "trap": "Dropping the 0.5 and getting t = sqrt(20/9.8) = 1.4 s.",
+      "diff": 3
+    },
+    {
+      "id": "phys-012",
+      "sub": "Kinematics",
+      "q": "Which pair lists only vector quantities?",
+      "choices": ["Velocity and acceleration", "Speed and distance", "Distance and displacement", "Speed and time"],
+      "answer": "Velocity and acceleration",
+      "why": "Vectors have magnitude and direction. Velocity and acceleration qualify. Speed, distance, and time have magnitude only.",
+      "trap": "Treating displacement as a scalar because it is measured in meters.",
+      "diff": 1
+    },
+    {
+      "id": "phys-013",
+      "sub": "Newton's Laws",
+      "q": "A 5 kg box is pushed with a net force of 20 N. What is its acceleration?",
+      "choices": ["0.25 m/s^2", "4 m/s^2", "25 m/s^2", "100 m/s^2"],
+      "answer": "4 m/s^2",
+      "why": "a = F/m = 20/5 = 4 m/s^2.",
+      "trap": "Multiplying 20 N by 5 kg to get 100 m/s^2.",
+      "diff": 1
+    },
+    {
+      "id": "phys-014",
+      "sub": "Newton's Laws",
+      "q": "What is the weight of a 60 kg student on Earth? Use g = 9.8 m/s^2.",
+      "choices": ["6.1 N", "60 N", "588 N", "5880 N"],
+      "answer": "588 N",
+      "why": "W = m*g = 60*9.8 = 588 N.",
+      "trap": "Reporting the mass, 60 N, and ignoring g.",
+      "diff": 2
+    },
+    {
+      "id": "phys-015",
+      "sub": "Friction",
+      "q": "A 10 kg crate moves at constant speed while pushed by a 30 N horizontal force. What is the kinetic friction?",
+      "choices": ["3 N", "30 N", "98 N", "300 N"],
+      "answer": "30 N",
+      "why": "Constant speed means net force is zero. Kinetic friction balances the push, so f = 30 N.",
+      "trap": "Reporting the weight, 98 N, as the friction force.",
+      "diff": 2
+    },
+    {
+      "id": "phys-016",
+      "sub": "Newton's Laws",
+      "q": "A 2 kg mass hangs from a rope in an elevator accelerating upward at 2 m/s^2. What is the tension? Use g = 9.8 m/s^2.",
+      "choices": ["4 N", "19.6 N", "23.6 N", "27.2 N"],
+      "answer": "23.6 N",
+      "why": "T - mg = ma, so T = m(g + a) = 2(9.8 + 2) = 23.6 N.",
+      "trap": "Using T = mg only and getting 19.6 N.",
+      "diff": 3
+    },
+    {
+      "id": "phys-017",
+      "sub": "Newton's Laws",
+      "q": "A book rests on a table. Which statement describes the forces on the book?",
+      "choices": ["They are balanced, so the book stays at rest", "They are unbalanced, so the book moves", "Only gravity acts on the book", "Friction pushes the book upward"],
+      "answer": "They are balanced, so the book stays at rest",
+      "why": "Gravity pulls down and the normal force pushes up. The forces are equal and opposite, so net force is zero.",
+      "trap": "Thinking a resting object has no forces acting on it.",
+      "diff": 1
+    },
+    {
+      "id": "phys-018",
+      "sub": "Newton's Laws",
+      "q": "A 5 kg block sits on a frictionless 30-degree incline. What is the normal force? Use g = 9.8 m/s^2.",
+      "choices": ["24.5 N", "42.4 N", "49 N", "56.6 N"],
+      "answer": "42.4 N",
+      "why": "N = mg*cos(30) = 5(9.8)(0.866) = 42.4 N.",
+      "trap": "Using mg*sin(30) = 24.5 N, which is the force along the incline.",
+      "diff": 3
+    },
+    {
+      "id": "phys-019",
+      "sub": "Circular Motion",
+      "q": "A 2 kg object moves in a circle of radius 4 m at 6 m/s. What is the centripetal force?",
+      "choices": ["3 N", "18 N", "36 N", "72 N"],
+      "answer": "18 N",
+      "why": "F = m*v^2/r = 2(6^2)/4 = 18 N.",
+      "trap": "Forgetting to square v and getting 2*6/4 = 3 N.",
+      "diff": 2
+    },
+    {
+      "id": "phys-020",
+      "sub": "Newton's Laws",
+      "q": "Two blocks of 3 kg and 2 kg hang from a light rope over a frictionless pulley. What is the acceleration? Use g = 9.8 m/s^2.",
+      "choices": ["1.96 m/s^2", "4.9 m/s^2", "9.8 m/s^2", "19.6 m/s^2"],
+      "answer": "1.96 m/s^2",
+      "why": "a = (m_1 - m_2)g/(m_1 + m_2) = (1)(9.8)/5 = 1.96 m/s^2.",
+      "trap": "Using g for the 1 kg difference only, which gives 9.8 m/s^2.",
+      "diff": 2
+    },
+    {
+      "id": "phys-021",
+      "sub": "Newton's Laws",
+      "q": "A swimmer pushes water backward. What is the reaction force?",
+      "choices": ["The water pushes the swimmer forward", "The swimmer's weight increases", "The water moves backward faster", "Friction stops the swimmer"],
+      "answer": "The water pushes the swimmer forward",
+      "why": "Newton's third law: the water pushes back on the swimmer with equal force in the opposite direction.",
+      "trap": "Expecting the reaction to cancel the force on the same body.",
+      "diff": 1
+    },
+    {
+      "id": "phys-022",
+      "sub": "Friction",
+      "q": "A 20 kg box slides at constant speed on a level floor under a 40 N pull. What is the coefficient of kinetic friction? Use g = 9.8 m/s^2.",
+      "choices": ["0.10", "0.20", "2.0", "4.9"],
+      "answer": "0.20",
+      "why": "At constant speed f = 40 N. mu = f/N = 40/(20*9.8) = 0.20.",
+      "trap": "Dividing 40 by 20 to get 2.0 as the coefficient.",
+      "diff": 2
+    },
+    {
+      "id": "phys-023",
+      "sub": "Work and Energy",
+      "q": "A 50 N force pulls a crate 4 m along the floor in the direction of motion. How much work is done?",
+      "choices": ["12.5 J", "54 J", "200 J", "800 J"],
+      "answer": "200 J",
+      "why": "W = F*d*cos(0) = 50*4 = 200 J.",
+      "trap": "Dividing 50 by 4 to get 12.5 J.",
+      "diff": 1
+    },
+    {
+      "id": "phys-024",
+      "sub": "Work and Energy",
+      "q": "A student carries a 10 kg bag 5 m horizontally at constant speed. How much work does the upward carrying force do?",
+      "choices": ["0 J", "49 J", "98 J", "490 J"],
+      "answer": "0 J",
+      "why": "The force is vertical and the displacement is horizontal. W = F*d*cos(90) = 0.",
+      "trap": "Using W = mg*d = 98*5 = 490 J and ignoring the right angle.",
+      "diff": 2
+    },
+    {
+      "id": "phys-025",
+      "sub": "Work and Energy",
+      "q": "A 1000 kg car moves at 20 m/s. What is its kinetic energy?",
+      "choices": ["1.0 x 10^4 J", "2.0 x 10^5 J", "4.0 x 10^5 J", "2.0 x 10^7 J"],
+      "answer": "2.0 x 10^5 J",
+      "why": "KE = 0.5*m*v^2 = 0.5(1000)(20^2) = 200000 J = 2.0 x 10^5 J.",
+      "trap": "Dropping the 0.5 and getting 4.0 x 10^5 J.",
+      "diff": 2
+    },
+    {
+      "id": "phys-026",
+      "sub": "Work and Energy",
+      "q": "A 2 kg book is lifted 3 m. What is its gain in gravitational potential energy? Use g = 9.8 m/s^2.",
+      "choices": ["6 J", "19.6 J", "58.8 J", "176.4 J"],
+      "answer": "58.8 J",
+      "why": "PE = m*g*h = 2(9.8)(3) = 58.8 J.",
+      "trap": "Using m*h = 6 J and leaving out g.",
+      "diff": 1
+    },
+    {
+      "id": "phys-027",
+      "sub": "Power and Efficiency",
+      "q": "A motor lifts a 200 N load 5 m in 4 s. What is its average power?",
+      "choices": ["40 W", "250 W", "1000 W", "4000 W"],
+      "answer": "250 W",
+      "why": "W = F*d = 200(5) = 1000 J. P = W/t = 1000/4 = 250 W.",
+      "trap": "Reporting the work, 1000 W, and skipping the division by time.",
+      "diff": 2
+    },
+    {
+      "id": "phys-028",
+      "sub": "Power and Efficiency",
+      "q": "A machine takes in 500 J and delivers 350 J of useful work. What is its efficiency?",
+      "choices": ["30%", "70%", "143%", "150%"],
+      "answer": "70%",
+      "why": "Efficiency = useful work/input energy x 100 = 350/500 x 100 = 70%.",
+      "trap": "Reporting the lost fraction, 30%, as the efficiency.",
+      "diff": 2
+    },
+    {
+      "id": "phys-029",
+      "sub": "Work and Energy",
+      "q": "A 2 kg block slides from rest down a 5 m high frictionless ramp. What is its speed at the bottom? Use g = 9.8 m/s^2.",
+      "choices": ["9.9 m/s", "14 m/s", "49 m/s", "98 m/s"],
+      "answer": "9.9 m/s",
+      "why": "mgh = 0.5mv^2 gives v = sqrt(2gh) = sqrt(2*9.8*5) = 9.9 m/s.",
+      "trap": "Reporting 2gh = 98 m/s and skipping the square root.",
+      "diff": 3
+    },
+    {
+      "id": "phys-030",
+      "sub": "Work and Energy",
+      "q": "A 4 kg cart speeds up from 2 m/s to 6 m/s. What net work was done on it?",
+      "choices": ["16 J", "32 J", "64 J", "128 J"],
+      "answer": "64 J",
+      "why": "W = 0.5*m*(v^2 - v_0^2) = 0.5(4)(36 - 4) = 64 J.",
+      "trap": "Using only the speed change and computing 0.5*4*4^2 = 32 J.",
+      "diff": 3
+    },
+    {
+      "id": "phys-031",
+      "sub": "Momentum",
+      "q": "A 1200 kg car moves at 15 m/s. What is its momentum?",
+      "choices": ["80 kg*m/s", "1800 kg*m/s", "18000 kg*m/s", "36000 kg*m/s"],
+      "answer": "18000 kg*m/s",
+      "why": "p = m*v = 1200(15) = 18000 kg*m/s.",
+      "trap": "Dividing 1200 by 15 to get 80 kg*m/s.",
+      "diff": 1
+    },
+    {
+      "id": "phys-032",
+      "sub": "Impulse",
+      "q": "A 0.5 kg ball is hit by a force of 200 N for 0.02 s. What impulse is delivered?",
+      "choices": ["0.01 N*s", "4 N*s", "100 N*s", "4000 N*s"],
+      "answer": "4 N*s",
+      "why": "Impulse = F*t = 200(0.02) = 4 N*s.",
+      "trap": "Multiplying mass by force, 0.5*200 = 100 N*s, and ignoring time.",
+      "diff": 2
+    },
+    {
+      "id": "phys-033",
+      "sub": "Momentum",
+      "q": "A 1 kg ball at 4 m/s hits a stationary 3 kg ball and they stick together. What is their common speed?",
+      "choices": ["0.75 m/s", "1 m/s", "1.33 m/s", "4 m/s"],
+      "answer": "1 m/s",
+      "why": "m_1*v_1 = (m_1 + m_2)v, so 1(4) = 4v and v = 1 m/s.",
+      "trap": "Dividing 4 by 3 to get 1.33 m/s from the moving mass only.",
+      "diff": 2
+    },
+    {
+      "id": "phys-034",
+      "sub": "Momentum",
+      "q": "A 4 kg rifle fires a 0.02 kg bullet at 300 m/s. What is the rifle's recoil speed?",
+      "choices": ["0.15 m/s", "1.5 m/s", "6 m/s", "60 m/s"],
+      "answer": "1.5 m/s",
+      "why": "Total momentum is zero: 0.02(300) = 4v, so v = 1.5 m/s.",
+      "trap": "Multiplying 0.02 by 300 and forgetting to divide by 4, giving 6 m/s.",
+      "diff": 2
+    },
+    {
+      "id": "phys-035",
+      "sub": "Momentum",
+      "q": "A 2 kg cart at 3 m/s east collides with a 1 kg cart at 3 m/s west and they stick. What is the final velocity?",
+      "choices": ["0 m/s", "1 m/s east", "1 m/s west", "3 m/s east"],
+      "answer": "1 m/s east",
+      "why": "Total p = 2(3) - 1(3) = 3 kg*m/s east. v = p/3 = 1 m/s east.",
+      "trap": "Adding both speeds to get 9/3 = 3 m/s east.",
+      "diff": 3
+    },
+    {
+      "id": "phys-036",
+      "sub": "Impulse",
+      "q": "Why do cars have crumple zones?",
+      "choices": ["They increase the impact time and lower the force", "They increase the momentum change", "They reduce the impulse to zero", "They add mass to stop the car"],
+      "answer": "They increase the impact time and lower the force",
+      "why": "Impulse equals momentum change and is fixed. A longer impact time means a smaller force, since F = impulse/t.",
+      "trap": "Thinking crumple zones reduce the impulse itself.",
+      "diff": 2
+    },
+    {
+      "id": "phys-037",
+      "sub": "Waves and Sound",
+      "q": "A wave has frequency 50 Hz and wavelength 2 m. What is its speed?",
+      "choices": ["25 m/s", "100 m/s", "104 m/s", "0.04 m/s"],
+      "answer": "100 m/s",
+      "why": "v = f*lambda = 50(2) = 100 m/s.",
+      "trap": "Dividing 50 by 2 to get 25 m/s.",
+      "diff": 1
+    },
+    {
+      "id": "phys-038",
+      "sub": "Waves and Sound",
+      "q": "A wave completes 20 cycles in 4 s. What are its frequency and period?",
+      "choices": ["5 Hz and 0.2 s", "0.2 Hz and 5 s", "4 Hz and 0.25 s", "80 Hz and 0.0125 s"],
+      "answer": "5 Hz and 0.2 s",
+      "why": "f = cycles/time = 20/4 = 5 Hz. T = 1/f = 0.2 s.",
+      "trap": "Swapping frequency and period to get 0.2 Hz and 5 s.",
+      "diff": 1
+    },
+    {
+      "id": "phys-039",
+      "sub": "Waves and Sound",
+      "q": "A sound pulse reflects from a cliff and returns after 2 s. Sound speed is 340 m/s. How far is the cliff?",
+      "choices": ["170 m", "340 m", "680 m", "1360 m"],
+      "answer": "340 m",
+      "why": "The sound travels to the cliff and back, so 2d = v*t = 340(2). d = 340 m.",
+      "trap": "Using d = v*t = 680 m and forgetting the round trip.",
+      "diff": 2
+    },
+    {
+      "id": "phys-040",
+      "sub": "Optics",
+      "q": "A light ray hits a flat mirror at 30 degrees from the normal. What is the angle between the reflected ray and the mirror surface?",
+      "choices": ["30 degrees", "60 degrees", "90 degrees", "120 degrees"],
+      "answer": "60 degrees",
+      "why": "The reflected angle is 30 degrees from the normal. The angle from the surface is 90 - 30 = 60 degrees.",
+      "trap": "Giving 30 degrees, which is measured from the normal, not the surface.",
+      "diff": 2
+    },
+    {
+      "id": "phys-041",
+      "sub": "Optics",
+      "q": "Light moves from air into glass with index 1.5. What happens to its speed and direction?",
+      "choices": ["Speed decreases and it bends toward the normal", "Speed increases and it bends away from the normal", "Speed is unchanged and it bends", "Speed decreases and it bends away from the normal"],
+      "answer": "Speed decreases and it bends toward the normal",
+      "why": "v = c/n, so speed falls to c/1.5. Light slows in the denser medium and bends toward the normal.",
+      "trap": "Thinking light speeds up in glass and bends away from the normal.",
+      "diff": 2
+    },
+    {
+      "id": "phys-042",
+      "sub": "Optics",
+      "q": "Light hits glass (n = 1.5) from air (n = 1.0) at 30 degrees to the normal. What is the angle of refraction? Use sin 30 = 0.5.",
+      "choices": ["19.5 degrees", "30 degrees", "48.6 degrees", "60 degrees"],
+      "answer": "19.5 degrees",
+      "why": "n_1*sin(i) = n_2*sin(r): 1.0(0.5) = 1.5 sin(r). sin(r) = 0.333, so r = 19.5 degrees.",
+      "trap": "Multiplying by 1.5 instead of dividing, then taking sin(r) = 0.75.",
+      "diff": 3
+    },
+    {
+      "id": "phys-043",
+      "sub": "Optics",
+      "q": "An object sits beyond 2F of a converging lens. What image forms?",
+      "choices": ["Real, inverted, smaller", "Virtual, upright, larger", "Real, upright, same size", "Virtual, inverted, same size"],
+      "answer": "Real, inverted, smaller",
+      "why": "An object beyond 2F forms a real image between F and 2F. That image is inverted and smaller.",
+      "trap": "Placing the image beyond 2F, which happens when the object is between F and 2F.",
+      "diff": 2
+    },
+    {
+      "id": "phys-044",
+      "sub": "Optics",
+      "q": "An object is 30 cm from a converging lens of focal length 10 cm. Where is the image? Use 1/f = 1/d_o + 1/d_i.",
+      "choices": ["7.5 cm", "15 cm", "20 cm", "40 cm"],
+      "answer": "15 cm",
+      "why": "1/d_i = 1/f - 1/d_o = 1/10 - 1/30 = 2/30. d_i = 15 cm on the far side.",
+      "trap": "Adding 10 and 30 to get 40 cm.",
+      "diff": 3
+    },
+    {
+      "id": "phys-045",
+      "sub": "Waves and Sound",
+      "q": "An ambulance siren moves toward you. How does the observed pitch change?",
+      "choices": ["Higher, because the waves are compressed", "Lower, because the waves are stretched", "Unchanged, because sound speed is fixed", "Higher, because the siren gets louder"],
+      "answer": "Higher, because the waves are compressed",
+      "why": "Motion toward the listener shortens the wavelength. Shorter wavelength means higher frequency, so higher pitch.",
+      "trap": "Confusing loudness with pitch, since the siren does get louder.",
+      "diff": 1
+    },
+    {
+      "id": "phys-046",
+      "sub": "Waves and Sound",
+      "q": "A guitar string 0.6 m long has tension 120 N and linear density 0.03 kg/m. What is its fundamental frequency?",
+      "choices": ["26 Hz", "53 Hz", "63 Hz", "105 Hz"],
+      "answer": "53 Hz",
+      "why": "v = sqrt(T/mu) = sqrt(4000) = 63.2 m/s. f = v/(2L) = 63.2/1.2 = 52.7 Hz, about 53 Hz.",
+      "trap": "Using f = v/L and getting 105 Hz, which is the second harmonic.",
+      "diff": 3
+    },
+    {
+      "id": "phys-047",
+      "sub": "Electricity",
+      "q": "A 12 V battery is connected to a 4 ohm resistor. What current flows?",
+      "choices": ["0.33 A", "3 A", "8 A", "48 A"],
+      "answer": "3 A",
+      "why": "I = V/R = 12/4 = 3 A.",
+      "trap": "Multiplying 12 by 4 to get 48 A.",
+      "diff": 1
+    },
+    {
+      "id": "phys-048",
+      "sub": "Electricity",
+      "q": "Two resistors, 6 ohm and 3 ohm, are in series across 9 V. What is the current?",
+      "choices": ["1 A", "1.5 A", "3 A", "4.5 A"],
+      "answer": "1 A",
+      "why": "Series: R = 6 + 3 = 9 ohm. I = V/R = 9/9 = 1 A.",
+      "trap": "Using the parallel equivalent, 2 ohm, and getting 4.5 A.",
+      "diff": 2
+    },
+    {
+      "id": "phys-049",
+      "sub": "Electricity",
+      "q": "Two 12 ohm resistors are in parallel across 24 V. What is the total current?",
+      "choices": ["1 A", "2 A", "4 A", "8 A"],
+      "answer": "4 A",
+      "why": "Parallel: 1/R = 1/12 + 1/12 = 1/6, so R = 6 ohm. I = 24/6 = 4 A.",
+      "trap": "Adding the resistors to get 24 ohm and then 1 A.",
+      "diff": 2
+    },
+    {
+      "id": "phys-050",
+      "sub": "Magnetism",
+      "q": "Two parallel wires carry currents in the same direction. What force acts between them?",
+      "choices": ["They attract each other", "They repel each other", "No force acts between them", "They rotate around each other"],
+      "answer": "They attract each other",
+      "why": "Each wire sets a magnetic field at the other. Parallel currents in the same direction attract.",
+      "trap": "Reversing the rule and expecting like currents to repel like charges.",
+      "diff": 3
+    },
+    {
+      "id": "phys-051",
+      "sub": "Electricity",
+      "q": "A 60 W bulb runs on 120 V. What current does it draw?",
+      "choices": ["0.5 A", "2 A", "60 A", "7200 A"],
+      "answer": "0.5 A",
+      "why": "P = V*I, so I = P/V = 60/120 = 0.5 A.",
+      "trap": "Multiplying 60 by 120 to get 7200 A.",
+      "diff": 1
+    },
+    {
+      "id": "phys-052",
+      "sub": "Electricity",
+      "q": "A 100 W fan runs for 5 hours. How much energy does it use in kWh?",
+      "choices": ["0.05 kWh", "0.5 kWh", "5 kWh", "500 kWh"],
+      "answer": "0.5 kWh",
+      "why": "Energy = power x time = 100 W x 5 h = 500 Wh = 0.5 kWh.",
+      "trap": "Keeping watts and reporting 500 Wh as 500 kWh.",
+      "diff": 2
+    },
+    {
+      "id": "phys-053",
+      "sub": "Thermodynamics",
+      "q": "How much heat raises 2 kg of water by 10 C? Use c = 4200 J/kg*C.",
+      "choices": ["4.2 x 10^4 J", "8.4 x 10^4 J", "1.7 x 10^5 J", "8.4 x 10^5 J"],
+      "answer": "8.4 x 10^4 J",
+      "why": "Q = m*c*deltaT = 2(4200)(10) = 84000 J = 8.4 x 10^4 J.",
+      "trap": "Dropping the mass and reporting 4.2 x 10^4 J.",
+      "diff": 2
+    },
+    {
+      "id": "phys-054",
+      "sub": "Thermodynamics",
+      "q": "A metal spoon in hot soup becomes hot at the handle. Which heat transfer process is mainly responsible?",
+      "choices": ["Conduction", "Convection", "Radiation", "Evaporation"],
+      "answer": "Conduction",
+      "why": "Heat moves through the solid metal by direct contact between particles. That process is conduction.",
+      "trap": "Choosing convection because the soup is a liquid.",
+      "diff": 1
+    },
+    {
+      "id": "phys-055",
+      "sub": "Thermodynamics",
+      "q": "A 2 m steel rod is heated by 50 C. The linear expansion coefficient is 1.2 x 10^-5 per C. How much does it lengthen?",
+      "choices": ["1.2 x 10^-3 m", "1.2 x 10^-4 m", "6.0 x 10^-4 m", "1.2 x 10^-2 m"],
+      "answer": "1.2 x 10^-3 m",
+      "why": "deltaL = L*alpha*deltaT = 2(1.2 x 10^-5)(50) = 1.2 x 10^-3 m.",
+      "trap": "Leaving out the 2 m length and reporting 6.0 x 10^-4 m.",
+      "diff": 3
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Deck schema
+
+One JSON file per deck. Strict JSON, UTF-8, no comments, no trailing commas.
+
+```json
+{
+  "part": "III",
+  "domain": "Mathematics",
+  "cards": [
+    {
+      "id": "math-alg-001",
+      "sub": "Algebra",
+      "q": "Solve for x: 2^(x+1) = 32.",
+      "choices": ["3", "4", "5", "6"],
+      "answer": "4",
+      "why": "32 = 2^5, so x + 1 = 5 and x = 4.",
+      "trap": "Picking 5 because the exponent reads 5.",
+      "diff": 1,
+      "grid": ["..##..", "..##.."]
+    }
+  ]
+}
+```
+
+## Fields
+
+| Field | Rule |
+|---|---|
+| `id` | Unique. Prefix per deck, numbered. |
+| `part` | `I`, `II`, or `III`. |
+| `domain` | Exact domain name from the exam table. |
+| `sub` | Subtopic. |
+| `q` | Stem, plain text, under 40 words. |
+| `choices` | 3 or 4 options. Empty array only for numeric entry cards. |
+| `answer` | Must equal one `choices` string exactly. |
+| `why` | Worked step chain, max 45 words. |
+| `trap` | The specific wrong path a student takes. |
+| `diff` | 1 easy, 2 moderate, 3 hard. Target 30/50/20. |
+| `grid` | Optional visual. Rows of equal length. `#` filled, `.` empty, `A-Z` labels. Max 6 rows x 10 cols. |
+
+Plain text only. No markdown, no HTML. Use `^` for exponents, `/` for fractions, `_` for subscripts. Unicode symbols are fine.

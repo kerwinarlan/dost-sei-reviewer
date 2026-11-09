@@ -1,0 +1,406 @@
+{
+  "part": "II",
+  "domain": "Science",
+  "cards": [
+    {
+      "id": "earth-001",
+      "sub": "Plate Tectonics",
+      "q": "Which plate boundary forms where two plates move away from each other?",
+      "choices": ["Convergent", "Divergent", "Transform", "Subduction"],
+      "answer": "Divergent",
+      "why": "Divergent boundaries separate plates. Magma rises to fill the gap and forms new oceanic crust at mid-ocean ridges.",
+      "trap": "Confusing divergent with subduction; subduction is a convergent process where a plate sinks.",
+      "diff": 1
+    },
+    {
+      "id": "earth-002",
+      "sub": "Plate Tectonics",
+      "q": "What happens when an oceanic plate meets a continental plate at a convergent boundary?",
+      "choices": ["The oceanic plate sinks beneath the continental plate", "The continental plate sinks beneath the oceanic plate", "Both plates slide past each other", "Both plates move apart"],
+      "answer": "The oceanic plate sinks beneath the continental plate",
+      "why": "Oceanic crust is denser than continental crust. It sinks into the mantle, forming a trench and a volcanic arc.",
+      "trap": "Assuming the continental plate sinks because it is thicker; density, not thickness, controls subduction.",
+      "diff": 2
+    },
+    {
+      "id": "earth-003",
+      "sub": "Volcanoes",
+      "q": "A volcano has steep sides and alternating layers of lava and ash. Which type is it?",
+      "choices": ["Composite volcano", "Shield volcano", "Cinder cone", "Caldera"],
+      "answer": "Composite volcano",
+      "why": "Composite volcanoes form from viscous, silica-rich magma that traps gas. Alternating lava and ash layers build steep cones.",
+      "trap": "Confusing composite cones with shield volcanoes, which form from runny, low-silica lava.",
+      "diff": 2
+    },
+    {
+      "id": "earth-004",
+      "sub": "Earthquakes",
+      "q": "The point on Earth's surface directly above an earthquake's focus is called the...",
+      "choices": ["epicenter", "hypocenter", "fault scarp", "seismic gap"],
+      "answer": "epicenter",
+      "why": "Seismic waves start at the focus underground. The point directly above it on the surface is the epicenter.",
+      "trap": "Using hypocenter for the surface point; the hypocenter is the underground focus.",
+      "diff": 2
+    },
+    {
+      "id": "earth-005",
+      "sub": "Faults",
+      "q": "Which fault forms when the crust is stretched by tension?",
+      "choices": ["Normal fault", "Reverse fault", "Strike-slip fault", "Thrust fault"],
+      "answer": "Normal fault",
+      "why": "Normal faults form in tension. The hanging wall slides down the fault plane because the crust is being pulled apart.",
+      "trap": "Mixing up normal and reverse faults; reverse faults form under compression.",
+      "diff": 3
+    },
+    {
+      "id": "earth-006",
+      "sub": "Earthquakes",
+      "q": "Why do S-waves fail to pass through Earth's outer core?",
+      "choices": ["The outer core is liquid", "The outer core is solid", "The outer core is extremely dense", "The outer core is magnetic"],
+      "answer": "The outer core is liquid",
+      "why": "S-waves are shear waves. Liquids cannot support shear stress, so these waves cannot travel through the liquid outer core.",
+      "trap": "Thinking density alone blocks S-waves; it is the liquid state that removes shear strength.",
+      "diff": 3
+    },
+    {
+      "id": "earth-007",
+      "sub": "Minerals",
+      "q": "Which mineral is hardest on the Mohs hardness scale?",
+      "choices": ["Diamond", "Quartz", "Calcite", "Talc"],
+      "answer": "Diamond",
+      "why": "Diamond ranks 10 on the Mohs scale, the top value. Talc ranks 1 and quartz ranks 7.",
+      "trap": "Choosing quartz because it scratches glass; diamond is much harder than quartz.",
+      "diff": 1
+    },
+    {
+      "id": "earth-008",
+      "sub": "Rock Cycle",
+      "q": "Which pair of processes turns loose sediment into sedimentary rock?",
+      "choices": ["Compaction and cementation", "Melting and cooling", "Heat and pressure", "Weathering and erosion"],
+      "answer": "Compaction and cementation",
+      "why": "Buried sediment is squeezed by compaction. Minerals then precipitate and cement the grains together.",
+      "trap": "Believing heat and pressure alone make sedimentary rock; that path makes metamorphic rock.",
+      "diff": 2
+    },
+    {
+      "id": "earth-009",
+      "sub": "Weathering",
+      "q": "Which process is an example of chemical weathering?",
+      "choices": ["Rusting of iron minerals", "Frost wedging of rock", "Root wedging of rock", "Abrasion by wind-blown sand"],
+      "answer": "Rusting of iron minerals",
+      "why": "Oxygen reacts with iron minerals to form rust. This changes the mineral composition, so it is chemical weathering.",
+      "trap": "Treating frost wedging as chemical because water is involved; it is physical weathering.",
+      "diff": 2
+    },
+    {
+      "id": "earth-010",
+      "sub": "Erosion",
+      "q": "Which statement describes erosion rather than weathering?",
+      "choices": ["Sand is carried downstream by a river", "Feldspar alters to clay in place", "Ice expands inside a rock crack", "Iron in rock reacts with oxygen"],
+      "answer": "Sand is carried downstream by a river",
+      "why": "Erosion moves material from one place to another. Weathering only breaks rock down where it sits.",
+      "trap": "Calling any rock breakdown erosion; only transport counts as erosion.",
+      "diff": 2
+    },
+    {
+      "id": "earth-011",
+      "sub": "Rock Cycle",
+      "q": "A limestone layer is baked by nearby magma and recrystallizes. Which rock forms?",
+      "choices": ["Marble", "Quartzite", "Slate", "Granite"],
+      "answer": "Marble",
+      "why": "Heat from magma recrystallizes limestone without melting it. The product is marble; sandstone would become quartzite.",
+      "trap": "Choosing quartzite because both are non-foliated; quartzite forms from sandstone.",
+      "diff": 3
+    },
+    {
+      "id": "earth-012",
+      "sub": "Atmosphere Layers",
+      "q": "In which atmospheric layer do most weather events occur?",
+      "choices": ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
+      "answer": "Troposphere",
+      "why": "The troposphere holds most of the atmosphere's mass and nearly all its water vapor. Weather forms there.",
+      "trap": "Placing weather in the stratosphere because ozone absorbs sunlight there.",
+      "diff": 1
+    },
+    {
+      "id": "earth-013",
+      "sub": "Clouds",
+      "q": "Which cloud type is associated with thunderstorms and heavy rain?",
+      "choices": ["Cumulonimbus", "Cirrus", "Stratus", "Altocumulus"],
+      "answer": "Cumulonimbus",
+      "why": "Cumulonimbus clouds have strong vertical growth. Their ice crystals and rapid updrafts produce thunder and heavy rain.",
+      "trap": "Linking heavy rain to stratus clouds because both look gray and flat.",
+      "diff": 2
+    },
+    {
+      "id": "earth-014",
+      "sub": "Typhoons",
+      "q": "Which condition favors the formation of a tropical cyclone?",
+      "choices": ["Warm ocean surface", "Strong vertical wind shear", "Cold ocean surface", "High surface air pressure"],
+      "answer": "Warm ocean surface",
+      "why": "Evaporation from warm water supplies the latent heat that powers a tropical cyclone. Cool water cannot sustain it.",
+      "trap": "Thinking strong wind shear helps; shear tilts and tears the storm apart.",
+      "diff": 1
+    },
+    {
+      "id": "earth-015",
+      "sub": "Monsoon",
+      "q": "Which monsoon brings the rainy season to the Philippines?",
+      "choices": ["Southwest monsoon (habagat)", "Northeast monsoon (amihan)", "Southeast monsoon", "Northwest monsoon"],
+      "answer": "Southwest monsoon (habagat)",
+      "why": "The southwest monsoon (habagat) flows from the warm ocean toward the country. It carries moist air and brings most of the wet-season rain. The northeast monsoon (amihan) is the cool, dry season.",
+      "trap": "Swapping habagat with amihan; amihan is the cool, dry northeast monsoon.",
+      "diff": 1
+    },
+    {
+      "id": "earth-016",
+      "sub": "Weather",
+      "q": "Why does rising air cool as it moves upward?",
+      "choices": ["It expands as pressure decreases", "It loses heat to the ozone layer", "It absorbs cold water vapor", "It slows down and loses kinetic energy"],
+      "answer": "It expands as pressure decreases",
+      "why": "Air pressure falls with altitude. The rising parcel expands, does work, and cools adiabatically.",
+      "trap": "Saying heat is lost to space; the cooling comes from expansion, not radiation.",
+      "diff": 3
+    },
+    {
+      "id": "earth-017",
+      "sub": "Greenhouse Effect",
+      "q": "Which gas is released by burning fossil fuels and absorbs outgoing infrared radiation?",
+      "choices": ["Carbon dioxide", "Nitrogen", "Oxygen", "Argon"],
+      "answer": "Carbon dioxide",
+      "why": "Fossil fuel combustion releases carbon dioxide. CO_2 absorbs outgoing infrared radiation and warms the lower atmosphere.",
+      "trap": "Choosing oxygen because it is abundant; O_2 has no dipole moment and does not absorb infrared.",
+      "diff": 1
+    },
+    {
+      "id": "earth-018",
+      "sub": "Greenhouse Effect",
+      "q": "What happens to infrared radiation emitted by Earth's surface?",
+      "choices": ["It is absorbed by greenhouse gases", "It escapes to space unchanged", "It is reflected back by the ozone layer", "It becomes visible light in the troposphere"],
+      "answer": "It is absorbed by greenhouse gases",
+      "why": "Greenhouse gases absorb outgoing infrared radiation. They re-emit it in all directions, including back toward the surface.",
+      "trap": "Thinking the atmosphere reflects infrared; greenhouse gases absorb and re-emit it.",
+      "diff": 2
+    },
+    {
+      "id": "earth-019",
+      "sub": "Water Cycle",
+      "q": "Which process changes water vapor into liquid droplets?",
+      "choices": ["Condensation", "Evaporation", "Transpiration", "Sublimation"],
+      "answer": "Condensation",
+      "why": "Cooling air cannot hold as much water vapor. Excess vapor condenses onto particles and forms droplets.",
+      "trap": "Confusing condensation with evaporation since both change the state of water.",
+      "diff": 1
+    },
+    {
+      "id": "earth-020",
+      "sub": "Ocean Currents",
+      "q": "What mainly drives surface ocean currents?",
+      "choices": ["Global wind patterns", "Tidal forces", "Earth's magnetic field", "Seafloor spreading"],
+      "answer": "Global wind patterns",
+      "why": "Winds drag on the sea surface and transfer momentum. This wind stress sets surface currents in motion.",
+      "trap": "Assuming tides drive surface currents; tides are minor compared with wind stress.",
+      "diff": 2
+    },
+    {
+      "id": "earth-021",
+      "sub": "Earth's Internal Structure",
+      "q": "Which layer of Earth is liquid and produces the magnetic field?",
+      "choices": ["Outer core", "Inner core", "Lower mantle", "Crust"],
+      "answer": "Outer core",
+      "why": "The outer core is liquid iron and nickel. Its convection, coupled with Earth's rotation, generates the magnetic field.",
+      "trap": "Choosing the inner core because it is hottest; the inner core is solid.",
+      "diff": 2
+    },
+    {
+      "id": "earth-022",
+      "sub": "Geologic Time",
+      "q": "Which principle says that in undisturbed sedimentary layers, the lowest layer is the oldest?",
+      "choices": ["Superposition", "Cross-cutting relationships", "Original horizontality", "Uniformitarianism"],
+      "answer": "Superposition",
+      "why": "In an undisturbed sequence, each layer was deposited on top of the older layer below it.",
+      "trap": "Confusing superposition with original horizontality, which is about flat deposition.",
+      "diff": 2
+    },
+    {
+      "id": "space-001",
+      "sub": "Solar System",
+      "q": "Which planet is the largest in the solar system?",
+      "choices": ["Jupiter", "Saturn", "Neptune", "Earth"],
+      "answer": "Jupiter",
+      "why": "Jupiter is the most massive planet. Its mass is more than twice that of all the other planets combined.",
+      "trap": "Choosing Saturn because of its rings; Jupiter is larger.",
+      "diff": 1
+    },
+    {
+      "id": "space-002",
+      "sub": "Planets",
+      "q": "Which of these is a terrestrial planet?",
+      "choices": ["Mars", "Jupiter", "Saturn", "Neptune"],
+      "answer": "Mars",
+      "why": "Mercury, Venus, Earth, and Mars have rocky surfaces. Mars is the only terrestrial planet listed.",
+      "trap": "Picking Jupiter or Saturn because they are planets; both are gas giants.",
+      "diff": 1
+    },
+    {
+      "id": "space-003",
+      "sub": "Kepler's Laws",
+      "q": "According to Kepler's second law, a planet moves fastest when it is...",
+      "choices": ["closest to the Sun", "farthest from the Sun", "at the midpoint of its orbit", "moving perpendicular to the Sun"],
+      "answer": "closest to the Sun",
+      "why": "Equal areas are swept in equal times. The planet covers the same area faster when it is near the Sun.",
+      "trap": "Thinking a planet moves fastest at aphelion because its orbit path is longer there.",
+      "diff": 2
+    },
+    {
+      "id": "space-004",
+      "sub": "Solar System",
+      "q": "Where is the main asteroid belt located?",
+      "choices": ["Between Mars and Jupiter", "Between Earth and Mars", "Between Saturn and Uranus", "Beyond Neptune"],
+      "answer": "Between Mars and Jupiter",
+      "why": "The main belt lies in the gap between the orbits of Mars and Jupiter.",
+      "trap": "Placing the belt between Earth and Mars; the main belt lies beyond Mars.",
+      "diff": 1
+    },
+    {
+      "id": "space-005",
+      "sub": "Kepler's Laws",
+      "q": "Kepler's third law states that the square of a planet's orbital period is proportional to...",
+      "choices": ["the cube of its semi-major axis", "the square of its semi-major axis", "its semi-major axis", "the inverse of its semi-major axis"],
+      "answer": "the cube of its semi-major axis",
+      "why": "For the solar system, T^2 = a^3 with T in years and a in AU. So T^2 is proportional to a^3.",
+      "trap": "Using T proportional to a, which drops both the square and the cube.",
+      "diff": 3
+    },
+    {
+      "id": "space-006",
+      "sub": "Gravity",
+      "q": "If the distance between two masses is doubled, the gravitational force between them becomes...",
+      "choices": ["one-fourth as strong", "one-half as strong", "twice as strong", "four times as strong"],
+      "answer": "one-fourth as strong",
+      "why": "Newton's law gives F proportional to 1/r^2. Doubling r makes F one-fourth of its original value.",
+      "trap": "Doubling the force when the distance doubles, which reverses the inverse-square relation.",
+      "diff": 3
+    },
+    {
+      "id": "space-007",
+      "sub": "Moon Phases",
+      "q": "Which Moon phase occurs when the Moon is between Earth and the Sun?",
+      "choices": ["New moon", "Full moon", "First quarter", "Last quarter"],
+      "answer": "New moon",
+      "why": "The Moon sits between Earth and the Sun. Its sunlit side faces away from Earth, so we see no illuminated face.",
+      "trap": "Confusing new moon with full moon; at full moon Earth is between the Sun and the Moon.",
+      "diff": 1
+    },
+    {
+      "id": "space-008",
+      "sub": "Eclipses",
+      "q": "A lunar eclipse can occur only during which phase?",
+      "choices": ["Full moon", "New moon", "First quarter", "Waxing crescent"],
+      "answer": "Full moon",
+      "why": "Earth must lie between the Sun and the Moon. That alignment happens only at full moon.",
+      "trap": "Choosing new moon because the Moon looks dark; lunar eclipses need the full moon.",
+      "diff": 2
+    },
+    {
+      "id": "space-009",
+      "sub": "Eclipses",
+      "q": "Why is there not a solar eclipse at every new moon?",
+      "choices": ["The Moon's orbit is tilted about 5 degrees to Earth's orbital plane", "The Moon is too small to cover the Sun", "Earth's atmosphere bends sunlight away", "The Moon rotates too fast"],
+      "answer": "The Moon's orbit is tilted about 5 degrees to Earth's orbital plane",
+      "why": "The Moon's orbit is tilted about 5 degrees from the ecliptic. Most new moons pass above or below the Sun.",
+      "trap": "Assuming eclipses need only alignment; the orbital tilt usually breaks the alignment.",
+      "diff": 3
+    },
+    {
+      "id": "space-010",
+      "sub": "Tides",
+      "q": "Which tide occurs when the Sun, Earth, and Moon are aligned?",
+      "choices": ["Spring tide", "Neap tide", "Diurnal tide", "Mixed tide"],
+      "answer": "Spring tide",
+      "why": "At new and full moon the solar and lunar tidal bulges add up, giving the largest tidal range.",
+      "trap": "Linking spring tide to the spring season; the name refers to the water springing up.",
+      "diff": 2
+    },
+    {
+      "id": "space-011",
+      "sub": "Moon Phases",
+      "q": "About how long is one complete cycle of lunar phases?",
+      "choices": ["29.5 days", "27.3 days", "24 hours", "365 days"],
+      "answer": "29.5 days",
+      "why": "The synodic month averages about 29.5 days. The sidereal month of 27.3 days is shorter because Earth also moves.",
+      "trap": "Using the 27.3-day sidereal month for the phase cycle.",
+      "diff": 2
+    },
+    {
+      "id": "space-012",
+      "sub": "Stars",
+      "q": "What surface property mainly determines a star's color?",
+      "choices": ["Temperature", "Distance from Earth", "Diameter", "Age"],
+      "answer": "Temperature",
+      "why": "Hot stars radiate most strongly at short wavelengths and look blue. Cool stars look red.",
+      "trap": "Reading color as distance; distance affects brightness, not color.",
+      "diff": 2
+    },
+    {
+      "id": "space-013",
+      "sub": "H-R Diagram",
+      "q": "Where on the H-R diagram do most stars, including the Sun, lie?",
+      "choices": ["Main sequence", "White dwarf region", "Red giant branch", "Supergiant region"],
+      "answer": "Main sequence",
+      "why": "Stars fuse hydrogen into helium on the main sequence. This stable stage is the longest part of a star's life.",
+      "trap": "Placing the Sun with the red giants because it looks yellow; it is a main-sequence star.",
+      "diff": 2
+    },
+    {
+      "id": "space-014",
+      "sub": "Stellar Evolution",
+      "q": "What remains at the center of a planetary nebula left by a Sun-like star?",
+      "choices": ["White dwarf", "Neutron star", "Black hole", "Brown dwarf"],
+      "answer": "White dwarf",
+      "why": "A Sun-like star sheds its outer layers as a planetary nebula. The exposed core remains as a white dwarf.",
+      "trap": "Choosing a neutron star; only massive stars leave neutron stars.",
+      "diff": 2
+    },
+    {
+      "id": "space-015",
+      "sub": "Constellations",
+      "q": "Why do different constellations appear in the night sky each season?",
+      "choices": ["Earth orbits the Sun and faces a different part of space", "The stars move quickly around Earth each year", "Earth's axis tilt changes every year", "The Moon blocks different stars each season"],
+      "answer": "Earth orbits the Sun and faces a different part of space",
+      "why": "Earth's night side faces a different direction as it orbits the Sun. Different constellations become visible.",
+      "trap": "Thinking the stars themselves move fast; Earth's orbit changes our view.",
+      "diff": 2
+    },
+    {
+      "id": "space-016",
+      "sub": "Light-Year",
+      "q": "A light-year is a unit of...",
+      "choices": ["distance", "time", "brightness", "mass"],
+      "answer": "distance",
+      "why": "A light-year is the distance light travels in one year, about 9.5 x 10^12 km.",
+      "trap": "Reading light-year as a time; it measures distance despite the word year.",
+      "diff": 1
+    },
+    {
+      "id": "space-017",
+      "sub": "Big Bang",
+      "q": "Which observation is the strongest evidence that the universe is expanding?",
+      "choices": ["Redshift of distant galaxies", "Parallax of nearby stars", "Rotation of the Milky Way", "Orbits of the planets"],
+      "answer": "Redshift of distant galaxies",
+      "why": "Light from receding galaxies is stretched to longer wavelengths. Greater redshift with distance indicates expansion.",
+      "trap": "Thinking expansion means galaxies only move through space; space itself stretches.",
+      "diff": 2
+    },
+    {
+      "id": "space-018",
+      "sub": "Galaxies",
+      "q": "What type of galaxy is the Milky Way?",
+      "choices": ["Barred spiral", "Elliptical", "Irregular", "Lenticular"],
+      "answer": "Barred spiral",
+      "why": "The Milky Way has a central bar and spiral arms. Radio and infrared maps confirm this structure.",
+      "trap": "Choosing elliptical because of the bright central bulge; the disk and bar make it a spiral.",
+      "diff": 3
+    }
+  ]
+}

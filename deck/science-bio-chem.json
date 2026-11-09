@@ -1,0 +1,1206 @@
+{
+  "part": "II",
+  "domain": "Science",
+  "cards": [
+    {
+      "id": "bio-001",
+      "sub": "Cell Structure and Function",
+      "q": "Which organelle is the main site of ATP synthesis in a eukaryotic cell?",
+      "choices": [
+        "Ribosome",
+        "Mitochondrion",
+        "Golgi apparatus",
+        "Lysosome"
+      ],
+      "answer": "Mitochondrion",
+      "why": "The mitochondrion runs oxidative phosphorylation on its inner membrane. This produces most of the cell's ATP.",
+      "trap": "Choosing the ribosome because protein synthesis also uses ATP.",
+      "diff": 1
+    },
+    {
+      "id": "bio-002",
+      "sub": "Cell Structure and Function",
+      "q": "Which structure controls which substances enter and leave a cell?",
+      "choices": [
+        "Cell wall",
+        "Plasma membrane",
+        "Cytoskeleton",
+        "Nucleolus"
+      ],
+      "answer": "Plasma membrane",
+      "why": "The plasma membrane is selectively permeable. Its phospholipid bilayer and embedded proteins regulate the movement of substances.",
+      "trap": "Confusing the cell wall, which is freely permeable and gives shape, with the controlling membrane.",
+      "diff": 1
+    },
+    {
+      "id": "bio-003",
+      "sub": "Cell Structure and Function",
+      "q": "A cell secretes large amounts of digestive enzyme. Which organelle pair is most directly enlarged?",
+      "choices": [
+        "Rough ER and Golgi apparatus",
+        "Smooth ER and peroxisome",
+        "Lysosome and vacuole",
+        "Centriole and nucleolus"
+      ],
+      "answer": "Rough ER and Golgi apparatus",
+      "why": "Ribosomes on the rough ER build the protein. The Golgi then modifies, sorts, and packages it for release.",
+      "trap": "Choosing lysosomes because they hold digestive enzymes, but lysosomes digest inside the cell.",
+      "diff": 2
+    },
+    {
+      "id": "bio-004",
+      "sub": "Cell Structure and Function",
+      "q": "What is the main function of the ribosome?",
+      "choices": [
+        "Synthesizing protein from mRNA",
+        "Replicating DNA before division",
+        "Producing ATP from glucose",
+        "Adding carbohydrate chains to protein"
+      ],
+      "answer": "Synthesizing protein from mRNA",
+      "why": "The ribosome reads mRNA codons and links amino acids with peptide bonds. It builds the polypeptide chain.",
+      "trap": "Choosing carbohydrate modification because the Golgi also acts on proteins.",
+      "diff": 1
+    },
+    {
+      "id": "bio-005",
+      "sub": "Cell Structure and Function",
+      "q": "Which structure occurs in a prokaryotic cell but not in a eukaryotic cell?",
+      "choices": [
+        "Nucleoid",
+        "Nucleolus",
+        "Mitochondrion",
+        "Golgi apparatus"
+      ],
+      "answer": "Nucleoid",
+      "why": "Prokaryotes hold DNA in a nucleoid with no surrounding membrane. Eukaryotes enclose DNA inside a nucleus.",
+      "trap": "Confusing the nucleoid with the nucleolus, which sits inside the eukaryotic nucleus.",
+      "diff": 1
+    },
+    {
+      "id": "bio-006",
+      "sub": "Cell Structure and Function",
+      "q": "Why does a cell's rate of diffusion limit its maximum size?",
+      "choices": [
+        "Volume rises faster than surface area",
+        "Surface area rises faster than volume",
+        "Diffusion stops in large cells",
+        "Large cells lose their plasma membrane"
+      ],
+      "answer": "Volume rises faster than surface area",
+      "why": "Volume grows as the cube of length while area grows as the square. The area-to-volume ratio falls, so exchange cannot serve the whole volume.",
+      "trap": "Reversing the relationship and claiming area outgrows volume.",
+      "diff": 2
+    },
+    {
+      "id": "bio-007",
+      "sub": "Cell Structure and Function",
+      "q": "Which organelle contains thylakoids stacked into grana?",
+      "choices": [
+        "Chloroplast",
+        "Mitochondrion",
+        "Peroxisome",
+        "Vacuole"
+      ],
+      "answer": "Chloroplast",
+      "why": "Thylakoid membranes inside the chloroplast stack into grana. They hold the photosystems that capture light energy.",
+      "trap": "Choosing the mitochondrion because its inner membrane is also folded, into cristae.",
+      "diff": 2
+    },
+    {
+      "id": "bio-008",
+      "sub": "Cell Structure and Function",
+      "q": "A cell placed in a hypertonic solution shrivels. Which process explains the water loss?",
+      "choices": [
+        "Osmosis out of the cell",
+        "Active transport of water out",
+        "Phagocytosis of solutes",
+        "Facilitated diffusion of water inward"
+      ],
+      "answer": "Osmosis out of the cell",
+      "why": "The outside solute concentration is higher, so water leaves through the membrane by osmosis down its own gradient.",
+      "trap": "Claiming active transport moves water, but water crosses by osmosis and is not pumped.",
+      "diff": 3
+    },
+    {
+      "id": "bio-009",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "Where in the chloroplast does the Calvin cycle take place?",
+      "choices": [
+        "Stroma",
+        "Thylakoid lumen",
+        "Outer membrane",
+        "Intermembrane space"
+      ],
+      "answer": "Stroma",
+      "why": "The Calvin cycle enzymes sit in the stroma. ATP and NADPH from the thylakoid reactions drive carbon fixation there.",
+      "trap": "Placing the Calvin cycle in the thylakoid because light capture happens there.",
+      "diff": 1
+    },
+    {
+      "id": "bio-010",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "Which pair of molecules does the light reaction supply to the Calvin cycle?",
+      "choices": [
+        "ATP and NADPH",
+        "ADP and NADP^+",
+        "CO_2 and H_2O",
+        "Glucose and O_2"
+      ],
+      "answer": "ATP and NADPH",
+      "why": "Light-driven electron transport makes ATP and NADPH. The Calvin cycle spends both to reduce CO_2 into sugar.",
+      "trap": "Naming ADP and NADP^+, which are the spent forms returned to the light reaction.",
+      "diff": 2
+    },
+    {
+      "id": "bio-011",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "In aerobic respiration, where is most ATP produced?",
+      "choices": [
+        "Inner mitochondrial membrane",
+        "Cytoplasm during glycolysis",
+        "Mitochondrial matrix during the Krebs cycle",
+        "Outer mitochondrial membrane"
+      ],
+      "answer": "Inner mitochondrial membrane",
+      "why": "The electron transport chain and ATP synthase sit on the inner membrane. Oxidative phosphorylation yields most of the ATP.",
+      "trap": "Choosing the Krebs cycle because it makes ATP, but only in small amounts by substrate-level phosphorylation.",
+      "diff": 2
+    },
+    {
+      "id": "bio-012",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "Which product forms when human muscle runs low on oxygen?",
+      "choices": [
+        "Lactate",
+        "Ethanol and CO_2",
+        "Acetyl-CoA",
+        "Citrate"
+      ],
+      "answer": "Lactate",
+      "why": "Without oxygen, NADH is reoxidized by reducing pyruvate to lactate. This lets glycolysis keep running.",
+      "trap": "Choosing ethanol because fermentation is often taught with yeast.",
+      "diff": 3
+    },
+    {
+      "id": "bio-013",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "What is the net ATP yield of glycolysis per glucose molecule?",
+      "choices": [
+        "2",
+        "4",
+        "32",
+        "0"
+      ],
+      "answer": "2",
+      "why": "Glycolysis uses 2 ATP and makes 4 ATP. The net gain is 4 - 2 = 2 ATP per glucose.",
+      "trap": "Reporting 4 and forgetting the two ATP invested at the start.",
+      "diff": 2
+    },
+    {
+      "id": "bio-014",
+      "sub": "Photosynthesis and Cellular Respiration",
+      "q": "In photosynthesis, which molecule is oxidized and which is reduced?",
+      "choices": [
+        "H_2O is oxidized and CO_2 is reduced",
+        "CO_2 is oxidized and H_2O is reduced",
+        "O_2 is oxidized and glucose is reduced",
+        "Glucose is oxidized and O_2 is reduced"
+      ],
+      "answer": "H_2O is oxidized and CO_2 is reduced",
+      "why": "Water loses electrons and releases O_2, so it is oxidized. CO_2 gains electrons and becomes glucose, so it is reduced.",
+      "trap": "Reversing the pair by applying the respiration direction to photosynthesis.",
+      "diff": 3
+    },
+    {
+      "id": "bio-015",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "In DNA, adenine pairs with which base?",
+      "choices": [
+        "Thymine",
+        "Guanine",
+        "Cytosine",
+        "Uracil"
+      ],
+      "answer": "Thymine",
+      "why": "Adenine forms two hydrogen bonds with thymine in DNA. Guanine pairs with cytosine.",
+      "trap": "Choosing uracil, which pairs with adenine only in RNA.",
+      "diff": 1
+    },
+    {
+      "id": "bio-016",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "Which process makes mRNA from a DNA template?",
+      "choices": [
+        "Transcription",
+        "Translation",
+        "Replication",
+        "Mutation"
+      ],
+      "answer": "Transcription",
+      "why": "RNA polymerase copies a DNA gene into mRNA. Translation then reads the mRNA to build protein.",
+      "trap": "Swapping transcription with translation, which reads mRNA to make protein.",
+      "diff": 1
+    },
+    {
+      "id": "bio-017",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "How many nucleotides make up one codon?",
+      "choices": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "answer": "3",
+      "why": "A codon is three nucleotides. It specifies one amino acid or a stop signal.",
+      "trap": "Choosing 4 because DNA has four bases, not because a codon has four bases.",
+      "diff": 2
+    },
+    {
+      "id": "bio-018",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "In the cross Aa x Aa, what fraction of offspring is expected to show the recessive phenotype?",
+      "choices": [
+        "1/4",
+        "1/2",
+        "3/4",
+        "0"
+      ],
+      "answer": "1/4",
+      "why": "The cross gives 1 AA : 2 Aa : 1 aa. Only aa shows the recessive trait, so the fraction is 1/4.",
+      "trap": "Reporting 1/2 because Aa is half the offspring, but heterozygotes show the dominant trait.",
+      "diff": 2
+    },
+    {
+      "id": "bio-019",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "What does a test cross determine about an individual that shows the dominant trait?",
+      "choices": [
+        "Whether it is homozygous or heterozygous",
+        "Whether it is male or female",
+        "Its chromosome number",
+        "Whether its alleles are linked"
+      ],
+      "answer": "Whether it is homozygous or heterozygous",
+      "why": "Crossing with a homozygous recessive reveals the unknown genotype. Any recessive offspring prove the parent carries the recessive allele.",
+      "trap": "Expecting a test cross to reveal chromosome number or sex.",
+      "diff": 1
+    },
+    {
+      "id": "bio-020",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "Two AaBb individuals are crossed. Both genes assort independently and show complete dominance. What phenotypic ratio results?",
+      "choices": [
+        "9:3:3:1",
+        "1:2:1",
+        "3:1",
+        "1:1:1:1"
+      ],
+      "answer": "9:3:3:1",
+      "why": "Each gene alone gives a 3:1 ratio. Multiplying (3:1) by (3:1) expands to 9:3:3:1 for the two traits combined.",
+      "trap": "Giving 3:1, which is the ratio for a single gene only.",
+      "diff": 3
+    },
+    {
+      "id": "bio-021",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "A color-blind man and a woman who is homozygous for normal vision have children. Which outcome is expected?",
+      "choices": [
+        "All daughters are carriers and all sons have normal vision",
+        "All daughters are color-blind",
+        "All sons are color-blind",
+        "Daughters are color-blind and sons are carriers"
+      ],
+      "answer": "All daughters are carriers and all sons have normal vision",
+      "why": "The father passes his X^c to daughters and his Y to sons. Daughters also get a normal X from the mother, so they are carriers.",
+      "trap": "Assuming a son can inherit an X-linked allele from his father.",
+      "diff": 3
+    },
+    {
+      "id": "bio-022",
+      "sub": "DNA, RNA, and Genetics",
+      "q": "Which mutation type replaces one nucleotide with another?",
+      "choices": [
+        "Substitution",
+        "Insertion",
+        "Deletion",
+        "Frameshift"
+      ],
+      "answer": "Substitution",
+      "why": "A substitution swaps one base for another. Insertions and deletions add or remove bases and can shift the reading frame.",
+      "trap": "Choosing frameshift, but a frameshift needs an insertion or a deletion.",
+      "diff": 2
+    },
+    {
+      "id": "bio-023",
+      "sub": "Evolution and Taxonomy",
+      "q": "Which statement describes natural selection?",
+      "choices": [
+        "Organisms with favorable inherited traits leave more offspring",
+        "Organisms change their traits during life to fit the environment",
+        "All organisms in a population become identical over time",
+        "Survival is random and does not change allele frequencies"
+      ],
+      "answer": "Organisms with favorable inherited traits leave more offspring",
+      "why": "Heritable variation plus unequal reproduction shifts allele frequencies across generations.",
+      "trap": "Claiming individuals adapt by changing their genes during life, which is Lamarckian.",
+      "diff": 1
+    },
+    {
+      "id": "bio-024",
+      "sub": "Evolution and Taxonomy",
+      "q": "The forelimbs of humans, whales, and bats share the same bone plan. What does this show?",
+      "choices": [
+        "Common ancestry",
+        "Convergent evolution",
+        "Identical function",
+        "No evolutionary relationship"
+      ],
+      "answer": "Common ancestry",
+      "why": "The same underlying bone arrangement is a homologous structure. It points to inheritance from a shared ancestor.",
+      "trap": "Calling the limbs analogous because they perform different functions.",
+      "diff": 2
+    },
+    {
+      "id": "bio-025",
+      "sub": "Evolution and Taxonomy",
+      "q": "In the name Homo sapiens, which part is the genus?",
+      "choices": [
+        "Homo",
+        "sapiens",
+        "Both words",
+        "Neither word"
+      ],
+      "answer": "Homo",
+      "why": "The genus is capitalized and comes first. The species epithet follows in lowercase.",
+      "trap": "Reversing genus and species because sapiens is the more familiar word.",
+      "diff": 2
+    },
+    {
+      "id": "bio-026",
+      "sub": "Evolution and Taxonomy",
+      "q": "Which sequence lists taxonomic ranks from broadest to narrowest?",
+      "choices": [
+        "Domain, kingdom, phylum, class, order, family, genus, species",
+        "Kingdom, domain, class, phylum, order, family, genus, species",
+        "Domain, phylum, kingdom, class, family, order, genus, species",
+        "Species, genus, family, order, class, phylum, kingdom, domain"
+      ],
+      "answer": "Domain, kingdom, phylum, class, order, family, genus, species",
+      "why": "Domain is the broadest rank, then kingdom, phylum, class, order, family, genus. Species is the narrowest.",
+      "trap": "Swapping phylum and class, or reversing the whole sequence.",
+      "diff": 2
+    },
+    {
+      "id": "bio-027",
+      "sub": "Evolution and Taxonomy",
+      "q": "A river splits one population into two isolated groups. What is most likely over many generations?",
+      "choices": [
+        "The groups may diverge and become separate species",
+        "The groups will interbreed more often",
+        "Mutation will stop in both groups",
+        "Both groups will become genetically identical"
+      ],
+      "answer": "The groups may diverge and become separate species",
+      "why": "Geographic isolation blocks gene flow. Separate mutations and selection pressures can then push the groups apart until reproductive isolation evolves.",
+      "trap": "Assuming isolation makes populations identical rather than divergent.",
+      "diff": 3
+    },
+    {
+      "id": "bio-028",
+      "sub": "Human Physiology",
+      "q": "In which organ does most chemical digestion and nutrient absorption occur?",
+      "choices": [
+        "Small intestine",
+        "Stomach",
+        "Large intestine",
+        "Esophagus"
+      ],
+      "answer": "Small intestine",
+      "why": "The small intestine receives pancreatic enzymes and bile. Its villi absorb most nutrients.",
+      "trap": "Choosing the stomach because it is acidic, but it absorbs few nutrients.",
+      "diff": 1
+    },
+    {
+      "id": "bio-029",
+      "sub": "Human Physiology",
+      "q": "What is the main role of bile in digestion?",
+      "choices": [
+        "Emulsifying fat into smaller droplets",
+        "Breaking starch into glucose",
+        "Digesting protein into amino acids",
+        "Absorbing water in the colon"
+      ],
+      "answer": "Emulsifying fat into smaller droplets",
+      "why": "Bile salts break large fat globules into smaller droplets. This increases the surface area for lipase.",
+      "trap": "Calling bile an enzyme that digests fat, but bile contains no digestive enzyme.",
+      "diff": 2
+    },
+    {
+      "id": "bio-030",
+      "sub": "Human Physiology",
+      "q": "Which heart chamber pumps oxygenated blood into the aorta?",
+      "choices": [
+        "Left ventricle",
+        "Right ventricle",
+        "Left atrium",
+        "Right atrium"
+      ],
+      "answer": "Left ventricle",
+      "why": "The left ventricle has the thickest wall. It pumps oxygenated blood through the aorta to the body.",
+      "trap": "Choosing the right ventricle, which pumps deoxygenated blood to the lungs.",
+      "diff": 2
+    },
+    {
+      "id": "bio-031",
+      "sub": "Human Physiology",
+      "q": "Which blood vessel carries oxygenated blood from the lungs to the heart?",
+      "choices": [
+        "Pulmonary vein",
+        "Pulmonary artery",
+        "Aorta",
+        "Vena cava"
+      ],
+      "answer": "Pulmonary vein",
+      "why": "The pulmonary vein returns oxygenated blood from the lungs to the left atrium.",
+      "trap": "Assuming every vein carries deoxygenated blood, which fails for the pulmonary vein.",
+      "diff": 1
+    },
+    {
+      "id": "bio-032",
+      "sub": "Human Physiology",
+      "q": "Which structure is the main site of gas exchange in the lungs?",
+      "choices": [
+        "Alveoli",
+        "Bronchi",
+        "Trachea",
+        "Pleura"
+      ],
+      "answer": "Alveoli",
+      "why": "Alveoli have thin walls and a large total surface area next to capillaries. Oxygen and CO_2 diffuse across that surface.",
+      "trap": "Choosing bronchi because they carry air, but they do not exchange gases.",
+      "diff": 2
+    },
+    {
+      "id": "bio-033",
+      "sub": "Human Physiology",
+      "q": "Which neuron type carries a signal from a receptor toward the central nervous system?",
+      "choices": [
+        "Sensory neuron",
+        "Motor neuron",
+        "Interneuron",
+        "Neuroglia"
+      ],
+      "answer": "Sensory neuron",
+      "why": "Sensory neurons carry impulses from receptors toward the CNS. Motor neurons carry impulses away to effectors.",
+      "trap": "Picking the motor neuron because it also conducts impulses, but in the opposite direction.",
+      "diff": 2
+    },
+    {
+      "id": "bio-034",
+      "sub": "Human Physiology",
+      "q": "Which pair of hormones has opposite effects on blood glucose?",
+      "choices": [
+        "Insulin and glucagon",
+        "Insulin and thyroxine",
+        "Glucagon and adrenaline",
+        "Cortisol and aldosterone"
+      ],
+      "answer": "Insulin and glucagon",
+      "why": "Insulin lowers blood glucose by promoting uptake and storage. Glucagon raises it by promoting glycogen breakdown.",
+      "trap": "Naming cortisol and aldosterone, which act on stress and sodium, not on opposing glucose control.",
+      "diff": 3
+    },
+    {
+      "id": "bio-035",
+      "sub": "Human Physiology",
+      "q": "What is the main role of memory B cells after an infection?",
+      "choices": [
+        "Producing a faster, stronger antibody response on re-exposure",
+        "Engulfing pathogens by phagocytosis",
+        "Releasing histamine during inflammation",
+        "Destroying virus-infected cells directly"
+      ],
+      "answer": "Producing a faster, stronger antibody response on re-exposure",
+      "why": "Memory B cells persist after recovery. When the same antigen returns, they divide quickly into antibody-secreting plasma cells.",
+      "trap": "Confusing memory B cells with cytotoxic T cells, which kill infected cells.",
+      "diff": 2
+    },
+    {
+      "id": "bio-036",
+      "sub": "Ecology",
+      "q": "About what fraction of energy passes from one trophic level to the next?",
+      "choices": [
+        "10%",
+        "50%",
+        "90%",
+        "1%"
+      ],
+      "answer": "10%",
+      "why": "Near 90% of energy is lost as heat, respiration, and waste at each step. About 10% reaches the next level.",
+      "trap": "Saying 90% passes because 90% is the fraction lost.",
+      "diff": 1
+    },
+    {
+      "id": "bio-037",
+      "sub": "Ecology",
+      "q": "What is the main role of decomposers in an ecosystem?",
+      "choices": [
+        "Returning mineral nutrients to the soil from dead matter",
+        "Converting sunlight into chemical energy",
+        "Serving as the first trophic level",
+        "Producing oxygen through photosynthesis"
+      ],
+      "answer": "Returning mineral nutrients to the soil from dead matter",
+      "why": "Decomposers break down dead tissue. The released mineral nutrients re-enter the soil and become available to producers.",
+      "trap": "Thinking decomposers return energy to producers rather than minerals.",
+      "diff": 2
+    },
+    {
+      "id": "bio-038",
+      "sub": "Ecology",
+      "q": "Which human activity returns the most long-stored carbon to the atmosphere?",
+      "choices": [
+        "Burning coal, oil, and gas",
+        "Planting forests",
+        "Industrial nitrogen fixation",
+        "Growing crops"
+      ],
+      "answer": "Burning coal, oil, and gas",
+      "why": "Fossil fuels hold carbon fixed long ago. Burning them returns that carbon to the atmosphere as CO_2.",
+      "trap": "Confusing the carbon cycle with the nitrogen cycle and naming nitrogen fixation.",
+      "diff": 2
+    },
+    {
+      "id": "bio-039",
+      "sub": "Ecology",
+      "q": "A population grows past the carrying capacity of its habitat. What usually happens next?",
+      "choices": [
+        "Growth slows or reverses as resources run short",
+        "Growth continues exponentially forever",
+        "The birth rate rises above the death rate",
+        "Emigration drops to zero"
+      ],
+      "answer": "Growth slows or reverses as resources run short",
+      "why": "Carrying capacity is set by available resources. Once it is exceeded, death rates rise and births fall, so the population declines.",
+      "trap": "Assuming logistic growth keeps climbing past the carrying capacity.",
+      "diff": 3
+    },
+    {
+      "id": "bio-040",
+      "sub": "Ecology",
+      "q": "Which organism in a grassland food web is a primary consumer?",
+      "choices": [
+        "Grasshopper",
+        "Grass",
+        "Hawk",
+        "Mushroom"
+      ],
+      "answer": "Grasshopper",
+      "why": "Primary consumers eat producers. A grasshopper eats grass and sits at the second trophic level.",
+      "trap": "Choosing the mushroom, which is a decomposer and not a consumer level.",
+      "diff": 1
+    },
+    {
+      "id": "chem-001",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Which particles are found in the nucleus of an atom?",
+      "choices": [
+        "Protons and neutrons",
+        "Protons and electrons",
+        "Neutrons and electrons",
+        "Electrons only"
+      ],
+      "answer": "Protons and neutrons",
+      "why": "The nucleus holds protons and neutrons. Electrons occupy orbitals outside the nucleus.",
+      "trap": "Placing electrons in the nucleus because their mass is small.",
+      "diff": 1
+    },
+    {
+      "id": "chem-002",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Two atoms of the same element have different mass numbers. What differs between them?",
+      "choices": [
+        "Number of neutrons",
+        "Number of protons",
+        "Number of electrons",
+        "Chemical symbol"
+      ],
+      "answer": "Number of neutrons",
+      "why": "Isotopes of an element share the same proton count. A different mass number means a different neutron count.",
+      "trap": "Changing the proton number, which would make a different element.",
+      "diff": 2
+    },
+    {
+      "id": "chem-003",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "What is the electron configuration of a sulfur atom, which has 16 electrons?",
+      "choices": [
+        "1s^2 2s^2 2p^6 3s^2 3p^4",
+        "1s^2 2s^2 2p^6 3s^2 3p^6",
+        "1s^2 2s^2 2p^6 3p^4",
+        "1s^2 2s^2 2p^5 3s^2 3p^3"
+      ],
+      "answer": "1s^2 2s^2 2p^6 3s^2 3p^4",
+      "why": "Fill 1s with 2, 2s with 2, 2p with 6, 3s with 2, then 3p with 4. The total is 16 electrons.",
+      "trap": "Writing 3p^6 and stopping without checking the 16-electron total.",
+      "diff": 1
+    },
+    {
+      "id": "chem-004",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "How does atomic radius change across a period from left to right?",
+      "choices": [
+        "It decreases",
+        "It increases",
+        "It stays the same",
+        "It first increases then decreases"
+      ],
+      "answer": "It decreases",
+      "why": "Nuclear charge rises while electrons enter the same shell. The stronger pull draws the electron cloud inward.",
+      "trap": "Assuming radius grows with atomic number across a period.",
+      "diff": 2
+    },
+    {
+      "id": "chem-005",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Which element has the highest first ionization energy?",
+      "choices": [
+        "Ne",
+        "Na",
+        "Mg",
+        "K"
+      ],
+      "answer": "Ne",
+      "why": "Neon has a stable octet and a small radius. Removing one electron breaks that filled 2p stability.",
+      "trap": "Choosing Na because it is a metal that ionizes easily, ignoring the trend within a period.",
+      "diff": 2
+    },
+    {
+      "id": "chem-006",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Which sublevel fills just before 3d in the aufbau order?",
+      "choices": [
+        "4s",
+        "3p",
+        "4p",
+        "3s"
+      ],
+      "answer": "4s",
+      "why": "The aufbau order places 4s below 3d in energy, so 4s fills first. That is why K and Ca come before the transition metals.",
+      "trap": "Filling 3d first because its principal quantum number is lower.",
+      "diff": 3
+    },
+    {
+      "id": "chem-007",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Which of these elements is the most electronegative?",
+      "choices": [
+        "F",
+        "O",
+        "Cl",
+        "N"
+      ],
+      "answer": "F",
+      "why": "Fluorine sits at the top right of the periodic table, excluding the noble gases. It attracts bonding electrons most strongly.",
+      "trap": "Choosing Cl because it belongs to the same group, but electronegativity falls down a group.",
+      "diff": 1
+    },
+    {
+      "id": "chem-008",
+      "sub": "Atomic Structure and Periodicity",
+      "q": "Which ion does an aluminum atom form to reach a noble-gas configuration?",
+      "choices": [
+        "Al^3+",
+        "Al^+",
+        "Al^2+",
+        "Al^-"
+      ],
+      "answer": "Al^3+",
+      "why": "Aluminum has three valence electrons. Losing all three leaves the neon core, so the ion is Al^3+.",
+      "trap": "Gaining five electrons instead of losing the three valence electrons.",
+      "diff": 3
+    },
+    {
+      "id": "chem-009",
+      "sub": "Chemical Bonding",
+      "q": "Which pair of elements most likely forms an ionic bond?",
+      "choices": [
+        "K and Cl",
+        "C and O",
+        "H and O",
+        "N and N"
+      ],
+      "answer": "K and Cl",
+      "why": "A metal with low ionization energy transfers an electron to a nonmetal with high electron affinity. K and Cl form K^+ and Cl^-.",
+      "trap": "Choosing two nonmetals, which share electrons and form covalent bonds.",
+      "diff": 1
+    },
+    {
+      "id": "chem-010",
+      "sub": "Chemical Bonding",
+      "q": "How many lone pairs sit on the central oxygen atom of a water molecule, H_2O?",
+      "choices": [
+        "2",
+        "0",
+        "1",
+        "3"
+      ],
+      "answer": "2",
+      "why": "Oxygen has 6 valence electrons and shares 2 in bonds. The remaining 4 form 2 lone pairs.",
+      "trap": "Counting the bonding pairs as lone pairs and answering 0.",
+      "diff": 2
+    },
+    {
+      "id": "chem-011",
+      "sub": "Chemical Bonding",
+      "q": "Which bond is the most polar?",
+      "choices": [
+        "H-F",
+        "H-Cl",
+        "H-Br",
+        "H-I"
+      ],
+      "answer": "H-F",
+      "why": "The electronegativity difference is largest for H and F. Fluorine is the most electronegative element.",
+      "trap": "Choosing H-I because iodine is the largest atom, but size does not set polarity.",
+      "diff": 1
+    },
+    {
+      "id": "chem-012",
+      "sub": "Chemical Bonding",
+      "q": "Which intermolecular force holds two water molecules together in liquid water?",
+      "choices": [
+        "Hydrogen bonding",
+        "Ionic bonding",
+        "Metallic bonding",
+        "Covalent bonding"
+      ],
+      "answer": "Hydrogen bonding",
+      "why": "The O-H bond is polar, so the H of one molecule attracts the lone pair on O of another. That is hydrogen bonding.",
+      "trap": "Calling the O-H bond itself a hydrogen bond, but that bond is covalent.",
+      "diff": 2
+    },
+    {
+      "id": "chem-013",
+      "sub": "Chemical Bonding",
+      "q": "Which substance has the highest boiling point?",
+      "choices": [
+        "H_2O",
+        "H_2S",
+        "H_2Se",
+        "H_2Te"
+      ],
+      "answer": "H_2O",
+      "why": "Water forms extensive hydrogen bonds. The others rely on weaker dipole and dispersion forces, so water boils highest despite its low mass.",
+      "trap": "Assuming boiling point rises with molar mass down the group and picking H_2Te.",
+      "diff": 3
+    },
+    {
+      "id": "chem-014",
+      "sub": "Chemical Bonding",
+      "q": "What is the molecular shape of methane, CH_4?",
+      "choices": [
+        "Tetrahedral",
+        "Trigonal planar",
+        "Bent",
+        "Linear"
+      ],
+      "answer": "Tetrahedral",
+      "why": "Four bonding pairs around carbon repel equally. The arrangement that spreads them farthest apart is tetrahedral.",
+      "trap": "Guessing trigonal planar by drawing the flat two-dimensional structure.",
+      "diff": 2
+    },
+    {
+      "id": "chem-015",
+      "sub": "Stoichiometry",
+      "q": "What is the molar mass of CO_2? (C = 12, O = 16)",
+      "choices": [
+        "44 g/mol",
+        "28 g/mol",
+        "32 g/mol",
+        "56 g/mol"
+      ],
+      "answer": "44 g/mol",
+      "why": "12 + 2(16) = 12 + 32 = 44 g/mol.",
+      "trap": "Counting one oxygen only and answering 28 g/mol.",
+      "diff": 1
+    },
+    {
+      "id": "chem-016",
+      "sub": "Stoichiometry",
+      "q": "How many moles are in 36 g of water? (H_2O = 18 g/mol)",
+      "choices": [
+        "2.0",
+        "0.5",
+        "18",
+        "36"
+      ],
+      "answer": "2.0",
+      "why": "n = m / M = 36 g / 18 g/mol = 2.0 mol.",
+      "trap": "Dividing the molar mass by the mass and getting 0.5.",
+      "diff": 1
+    },
+    {
+      "id": "chem-017",
+      "sub": "Stoichiometry",
+      "q": "How many molecules are in 0.5 mol of O_2? (N_A = 6.02 x 10^23)",
+      "choices": [
+        "3.01 x 10^23",
+        "6.02 x 10^23",
+        "1.20 x 10^24",
+        "3.01 x 10^22"
+      ],
+      "answer": "3.01 x 10^23",
+      "why": "0.5 x 6.02 x 10^23 = 3.01 x 10^23 molecules.",
+      "trap": "Doubling instead of halving and answering 1.20 x 10^24.",
+      "diff": 2
+    },
+    {
+      "id": "chem-018",
+      "sub": "Stoichiometry",
+      "q": "For 2H_2 + O_2 → 2H_2O, how many moles of O_2 react with 4 mol of H_2?",
+      "choices": [
+        "2",
+        "4",
+        "8",
+        "1"
+      ],
+      "answer": "2",
+      "why": "The ratio of H_2 to O_2 is 2:1. Then 4 mol H_2 needs 4/2 = 2 mol O_2.",
+      "trap": "Using a 1:1 ratio and answering 4.",
+      "diff": 2
+    },
+    {
+      "id": "chem-019",
+      "sub": "Stoichiometry",
+      "q": "2 mol N_2 react with 3 mol H_2 by N_2 + 3H_2 → 2NH_3. Which reactant is limiting?",
+      "choices": [
+        "H_2",
+        "N_2",
+        "NH_3",
+        "Both run out at the same time"
+      ],
+      "answer": "H_2",
+      "why": "2 mol N_2 needs 6 mol H_2. Only 3 mol H_2 is present, so H_2 runs out first.",
+      "trap": "Comparing the given moles directly (2 vs 3) instead of converting with the 1:3 ratio.",
+      "diff": 2
+    },
+    {
+      "id": "chem-020",
+      "sub": "Stoichiometry",
+      "q": "4 mol H_2 reacts with excess N_2 by N_2 + 3H_2 → 2NH_3. What is the theoretical yield of NH_3?",
+      "choices": [
+        "2.67 mol",
+        "8 mol",
+        "4 mol",
+        "1.33 mol"
+      ],
+      "answer": "2.67 mol",
+      "why": "4 mol H_2 x (2 mol NH_3 / 3 mol H_2) = 8/3 = 2.67 mol NH_3.",
+      "trap": "Multiplying by the ammonia coefficient without dividing by the H_2 coefficient, giving 8.",
+      "diff": 3
+    },
+    {
+      "id": "chem-021",
+      "sub": "Stoichiometry",
+      "q": "A reaction has a theoretical yield of 20.0 g and produces 15.0 g. What is the percent yield?",
+      "choices": [
+        "75.0%",
+        "133%",
+        "5.0%",
+        "33.3%"
+      ],
+      "answer": "75.0%",
+      "why": "Percent yield = (actual / theoretical) x 100 = (15.0 / 20.0) x 100 = 75.0%.",
+      "trap": "Dividing theoretical by actual and getting 133%.",
+      "diff": 2
+    },
+    {
+      "id": "chem-022",
+      "sub": "Stoichiometry",
+      "q": "A compound is 40.0% C, 6.7% H, and 53.3% O by mass. What is its empirical formula? (C=12, H=1, O=16)",
+      "choices": [
+        "CH_2O",
+        "C_2H_4O_2",
+        "CHO",
+        "C_2H_6O"
+      ],
+      "answer": "CH_2O",
+      "why": "Moles are 40.0/12 = 3.33 C, 6.7/1 = 6.7 H, and 53.3/16 = 3.33 O. Divide by 3.33 to get 1:2:1.",
+      "trap": "Stopping at the raw mole values without dividing by the smallest.",
+      "diff": 3
+    },
+    {
+      "id": "chem-023",
+      "sub": "Solutions",
+      "q": "What is the molarity of a solution with 0.50 mol of solute in 2.0 L of solution?",
+      "choices": [
+        "0.25 M",
+        "4.0 M",
+        "1.0 M",
+        "0.50 M"
+      ],
+      "answer": "0.25 M",
+      "why": "M = mol / L = 0.50 / 2.0 = 0.25 M.",
+      "trap": "Multiplying moles by volume instead of dividing.",
+      "diff": 1
+    },
+    {
+      "id": "chem-024",
+      "sub": "Solutions",
+      "q": "50.0 mL of 2.0 M HCl is diluted to 250 mL. What is the new concentration?",
+      "choices": [
+        "0.40 M",
+        "10. M",
+        "1.0 M",
+        "0.20 M"
+      ],
+      "answer": "0.40 M",
+      "why": "M_1 V_1 = M_2 V_2 gives (2.0)(50.0) = M_2(250). Then M_2 = 0.40 M.",
+      "trap": "Using only the water added instead of the final total volume.",
+      "diff": 2
+    },
+    {
+      "id": "chem-025",
+      "sub": "Solutions",
+      "q": "Which property is a colligative property?",
+      "choices": [
+        "Boiling point elevation",
+        "Density",
+        "Color",
+        "Molar mass"
+      ],
+      "answer": "Boiling point elevation",
+      "why": "Colligative properties depend on the number of dissolved particles, not their identity. Boiling point elevation is one of them.",
+      "trap": "Choosing density, which depends on the identity of the solute.",
+      "diff": 2
+    },
+    {
+      "id": "chem-026",
+      "sub": "Solutions",
+      "q": "Why does adding salt lower the freezing point of water?",
+      "choices": [
+        "Solute particles disrupt ice crystal formation",
+        "Salt adds heat to the water",
+        "Salt reacts with water to form a new compound",
+        "Salt increases the molar mass of water"
+      ],
+      "answer": "Solute particles disrupt ice crystal formation",
+      "why": "Dissolved particles interfere with the ordered packing needed to form ice. More energy must be removed, so the freezing point drops.",
+      "trap": "Thinking salt heats the ice instead of disrupting crystal formation.",
+      "diff": 2
+    },
+    {
+      "id": "chem-027",
+      "sub": "Solutions",
+      "q": "At equal concentration, which solution conducts electricity best?",
+      "choices": [
+        "NaCl(aq)",
+        "C_6H_12O_6(aq)",
+        "CH_3OH(aq)",
+        "C_12H_22O_11(aq)"
+      ],
+      "answer": "NaCl(aq)",
+      "why": "NaCl dissociates into two ions per formula unit. The sugars and methanol stay as neutral molecules and carry no current.",
+      "trap": "Choosing a sugar because it dissolves well, but dissolving is not ionizing.",
+      "diff": 2
+    },
+    {
+      "id": "chem-028",
+      "sub": "Gas Laws",
+      "q": "A gas at 2.0 atm occupies 3.0 L. At constant temperature, what volume does it occupy at 6.0 atm?",
+      "choices": [
+        "1.0 L",
+        "9.0 L",
+        "6.0 L",
+        "4.0 L"
+      ],
+      "answer": "1.0 L",
+      "why": "Boyle's law gives P_1 V_1 = P_2 V_2. Then (2.0)(3.0) = (6.0)V_2, so V_2 = 1.0 L.",
+      "trap": "Multiplying pressure and volume and answering 9.0 L.",
+      "diff": 1
+    },
+    {
+      "id": "chem-029",
+      "sub": "Gas Laws",
+      "q": "A gas occupies 300 mL at 300 K. At constant pressure, what volume does it occupy at 600 K?",
+      "choices": [
+        "600 mL",
+        "150 mL",
+        "300 mL",
+        "900 mL"
+      ],
+      "answer": "600 mL",
+      "why": "Charles's law gives V_1/T_1 = V_2/T_2. Volume doubles when the absolute temperature doubles.",
+      "trap": "Halving the volume by inverting the ratio.",
+      "diff": 2
+    },
+    {
+      "id": "chem-030",
+      "sub": "Gas Laws",
+      "q": "What is the volume of 2.0 mol of an ideal gas at 1.0 atm and 273 K? (R = 0.0821)",
+      "choices": [
+        "44.8 L",
+        "22.4 L",
+        "11.2 L",
+        "89.6 L"
+      ],
+      "answer": "44.8 L",
+      "why": "V = nRT/P = (2.0)(0.0821)(273)/1.0 = 44.8 L.",
+      "trap": "Using 22.4 L, the volume of one mole, without scaling to two moles.",
+      "diff": 2
+    },
+    {
+      "id": "chem-031",
+      "sub": "Gas Laws",
+      "q": "A gas at 1.0 atm and 300 K is heated to 600 K at constant volume. What is the new pressure?",
+      "choices": [
+        "2.0 atm",
+        "0.50 atm",
+        "1.0 atm",
+        "1200 atm"
+      ],
+      "answer": "2.0 atm",
+      "why": "At constant volume, P_1/T_1 = P_2/T_2. Doubling the absolute temperature doubles the pressure to 2.0 atm.",
+      "trap": "Halving the pressure by inverting the ratio.",
+      "diff": 3
+    },
+    {
+      "id": "chem-032",
+      "sub": "Acids and Bases",
+      "q": "What is the pH of a solution with [H^+] = 1.0 x 10^-3 M?",
+      "choices": [
+        "3",
+        "11",
+        "-3",
+        "0.001"
+      ],
+      "answer": "3",
+      "why": "pH = -log[H^+]. The log of 1.0 x 10^-3 is -3, so pH = 3.",
+      "trap": "Reporting 0.001, which is the concentration, not the pH.",
+      "diff": 1
+    },
+    {
+      "id": "chem-033",
+      "sub": "Acids and Bases",
+      "q": "At 25 C, what is the pH of a solution with [OH^-] = 1.0 x 10^-4 M?",
+      "choices": [
+        "10",
+        "4",
+        "14",
+        "7"
+      ],
+      "answer": "10",
+      "why": "pOH = -log(1.0 x 10^-4) = 4. Then pH = 14 - 4 = 10.",
+      "trap": "Reporting 4 and forgetting the pH to pOH conversion.",
+      "diff": 2
+    },
+    {
+      "id": "chem-034",
+      "sub": "Acids and Bases",
+      "q": "What are the products of the reaction between HCl and NaOH?",
+      "choices": [
+        "NaCl and H_2O",
+        "NaCl and H_2 gas",
+        "NaH and HClO",
+        "Na_2O and H_2O"
+      ],
+      "answer": "NaCl and H_2O",
+      "why": "H^+ from the acid and OH^- from the base combine to form water. Na^+ and Cl^- remain as dissolved salt.",
+      "trap": "Assuming a gas forms, as it does when an acid meets a metal.",
+      "diff": 2
+    },
+    {
+      "id": "chem-035",
+      "sub": "Acids and Bases",
+      "q": "25.0 mL of HCl is neutralized by 20.0 mL of 0.10 M NaOH. What is the HCl concentration?",
+      "choices": [
+        "0.080 M",
+        "0.10 M",
+        "0.125 M",
+        "0.050 M"
+      ],
+      "answer": "0.080 M",
+      "why": "Moles NaOH = 0.0200 L x 0.10 M = 0.00200 mol. The 1:1 ratio gives M_HCl = 0.00200 / 0.0250 = 0.080 M.",
+      "trap": "Using the base volume in place of the acid volume.",
+      "diff": 3
+    },
+    {
+      "id": "chem-036",
+      "sub": "Acids and Bases",
+      "q": "In NH_3 + H_2O → NH_4^+ + OH^-, which species is the conjugate acid of NH_3?",
+      "choices": [
+        "NH_4^+",
+        "OH^-",
+        "H_2O",
+        "NH_3"
+      ],
+      "answer": "NH_4^+",
+      "why": "The conjugate acid forms when a base accepts a proton. NH_3 accepts H^+ from water and becomes NH_4^+.",
+      "trap": "Naming H_2O because it donates the proton, which makes it the acid, not the conjugate acid.",
+      "diff": 2
+    },
+    {
+      "id": "chem-037",
+      "sub": "Organic Chemistry",
+      "q": "Which formula represents an alkane?",
+      "choices": [
+        "C_3H_8",
+        "C_3H_6",
+        "C_3H_4",
+        "C_6H_6"
+      ],
+      "answer": "C_3H_8",
+      "why": "A saturated acyclic alkane follows C_nH_2n+2. For n = 3 that gives C_3H_8.",
+      "trap": "Choosing C_3H_6, which is an alkene with one double bond.",
+      "diff": 1
+    },
+    {
+      "id": "chem-038",
+      "sub": "Organic Chemistry",
+      "q": "Which functional group defines a carboxylic acid?",
+      "choices": [
+        "-COOH",
+        "-OH only",
+        "-CHO",
+        "-NH_2"
+      ],
+      "answer": "-COOH",
+      "why": "The carboxyl group has a carbonyl C=O and an -OH on the same carbon. That group releases H^+ and makes the compound acidic.",
+      "trap": "Choosing the alcohol -OH, which does not make a compound acidic.",
+      "diff": 2
+    },
+    {
+      "id": "chem-039",
+      "sub": "Organic Chemistry",
+      "q": "Butane and 2-methylpropane share the molecular formula C_4H_10. What are they?",
+      "choices": [
+        "Structural isomers",
+        "Identical compounds",
+        "Isotopes",
+        "Polymers"
+      ],
+      "answer": "Structural isomers",
+      "why": "The same molecular formula with different connectivity makes them structural isomers. Their physical properties differ.",
+      "trap": "Calling them isotopes because the formula matches, but isotopes differ in neutrons.",
+      "diff": 2
+    },
+    {
+      "id": "chem-040",
+      "sub": "Organic Chemistry",
+      "q": "How many carbon atoms are in the longest chain of 2,3-dimethylpentane?",
+      "choices": [
+        "5",
+        "7",
+        "3",
+        "2"
+      ],
+      "answer": "5",
+      "why": "The parent name pentane already means a five-carbon chain. The two methyl groups are branches on carbons 2 and 3.",
+      "trap": "Adding the two methyl carbons to the parent and getting seven.",
+      "diff": 3
+    }
+  ]
+}

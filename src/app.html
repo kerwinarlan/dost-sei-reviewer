@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f4ef">
+<title>DOST-SEI Reviewer</title>
+<meta name="description" content="Offline flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examination. 440 cards across Mathematics, Science, Creative Reasoning, and Language.">
+<meta property="og:title" content="DOST-SEI Reviewer">
+<meta property="og:description" content="440 offline flashcards and a formula cheatsheet for the DOST-SEI Scholarship Examination.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#fff; --ink:#17191c; --muted:#6a6f76; --line:#e3ded4;
+  --accent:#146b56; --accent-ink:#fff; --good:#1a7f4b; --bad:#b4322b;
+  --radius:14px; --shadow:0 1px 2px rgba(20,22,26,.05),0 10px 28px -16px rgba(20,22,26,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#11131a;--surface:#1a1d24;--ink:#e9e6df;--muted:#99a0aa;--line:#2a2f39;
+  --accent:#4ec9a4;--accent-ink:#0b241d;--good:#3fbf7f;--bad:#ef6b60;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.8)}
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+h1{font-size:28px;line-height:1.15;letter-spacing:-.02em;margin:0 0 6px}
+h2.sec{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px;font-weight:650}
+.sub{color:var(--muted);margin:0 0 22px;font-size:15px}
+.sub b{color:var(--ink)}
+.pill{display:inline-block;margin-left:6px;padding:2px 9px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font-size:12.5px;font-weight:650;letter-spacing:.01em;vertical-align:1px}
+.top{padding-top:calc(26px + env(safe-area-inset-top))}
+
+/* home */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.stat .n{font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.seg{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;margin:0 0 14px;overflow:auto}
+.seg button{flex:1 0 auto;padding:9px 12px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.stat-row{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 14px;margin-bottom:8px}
+.stat-row:hover{border-color:var(--accent)}
+.stat-row .r1{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.stat-row .nm{font-weight:600}
+.stat-row .ct{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:4px;border-radius:99px;background:var(--line);margin-top:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+footer{margin-top:30px;color:var(--muted);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding-top:14px}
+footer button{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.btn{min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:650;padding:0 16px;width:100%;transition:transform .06s,border-color .12s}
+.btn:active{transform:scale(.995)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{color:var(--muted)}
+
+/* study */
+.hud{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0 9px}
+.hud .in{display:flex;align-items:center;gap:12px;max-width:720px;margin:0 auto;padding:0 18px}
+.x{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:var(--muted);font-size:19px;line-height:1}
+.x:hover{background:var(--surface);color:var(--ink)}
+.pbar{flex:1;height:5px;border-radius:99px;background:var(--line);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .2s}
+.cnt{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:44px;text-align:right}
+.clock{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.clock.over{color:var(--bad)}
+.qcard{margin-top:20px}
+.meta{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.meta .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);display:inline-block}
+.diff{letter-spacing:1px;color:var(--muted)}
+.subtle{font-size:12px;color:var(--muted);margin:4px 0 0;display:flex;gap:8px;align-items:center}
+.subtle .diff{margin-left:2px}
+.q{font-size:21px;line-height:1.4;letter-spacing:-.01em;margin:12px 0 18px;font-weight:650}
+.choices{margin-top:2px}
+.choice{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:9px;min-height:52px;transition:border-color .12s,background .12s}
+.choice:hover:not(:disabled){border-color:var(--accent)}
+.choice:disabled{cursor:default}
+.choice .k{flex:0 0 22px;height:22px;border-radius:6px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;font-size:11.5px;font-weight:700;color:var(--muted);margin-top:1px}
+.choice .t{flex:1;padding-top:1px}
+.choice.correct{border-color:var(--good);background:color-mix(in srgb,var(--good) 9%,var(--surface))}
+.choice.correct .k{background:var(--good);border-color:var(--good);color:#fff}
+.choice.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 8%,var(--surface))}
+.choice.wrong .k{background:var(--bad);border-color:var(--bad);color:#fff}
+.fb{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--good);border-radius:10px;padding:13px 15px}
+.fb.bad{border-left-color:var(--bad)}
+.fb .h{font-size:13px;font-weight:700;margin-bottom:4px}
+.fb .h.ok{color:var(--good)}
+.fb .h.no{color:var(--bad)}
+.fb p{margin:0;font-size:14.5px;line-height:1.55}
+.fb .trap{margin-top:8px;font-size:13px;color:var(--muted)}
+.actions{display:grid;grid-template-columns:1fr 1.5fr;gap:10px;margin-top:18px}
+.kbd-hint{color:var(--muted);font-size:11.5px;text-align:center;margin-top:14px}
+kbd{font:inherit;font-size:11px;padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+
+.typed{display:flex;gap:10px;margin-top:4px}
+.typed input{flex:1;min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 14px;font:inherit}
+.typed input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.typed .btn{width:auto;padding:0 18px}
+
+/* grid figure */
+.grid{display:grid;grid-template-columns:repeat(var(--cols),1fr);gap:2px;max-width:min(190px,44vw);margin:2px 0 18px;padding:4px;border-radius:8px;background:color-mix(in srgb,var(--line) 40%,transparent)}
+.grid .cell{aspect-ratio:1;display:grid;place-items:center;border-radius:3px;background:color-mix(in srgb,var(--surface) 70%,transparent);font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
+.grid .cell.f{background:var(--ink)}
+.grid .cell.l{background:transparent}
+
+/* summary */
+.big{font-size:44px;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:6px 0 0}
+.sumgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 20px}
+.missed{font-size:13.5px;color:var(--muted);border-left:2px solid var(--line);padding-left:12px;margin:8px 0}
+@media (max-width:420px){
+  h1{font-size:24px}
+  .q{font-size:19px}
+  .stat .n{font-size:19px}
+}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<noscript><p class="wrap top">This reviewer needs JavaScript. Open it in a browser.</p></noscript>
+<script>
+const DECK = /*DECK*/[];
+const KEY = 'dost.v1';
+const PART_LABEL = {I:'Creative Reasoning + Language', II:'Science', III:'Mathematics'};
+const PART_MIN = {I:45, II:65, III:70};
+const EXAM = '2026-11-15T00:00:00+08:00';
+
+let S = load();
+let view = 'home';
+let pickPart = 'all';
+let ses = null;
+let tick = null;
+
+function load(){
+  try{
+    const v = JSON.parse(localStorage.getItem(KEY));
+    if(v && typeof v === 'object' && v.cards) return v;
+  }catch(e){}
+  return {cards:{}, missed:[]};
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){}
+}
+function cs(id){
+  if(!S.cards[id]) S.cards[id] = {box:0, seen:0, right:0, wrong:0};
+  return S.cards[id];
+}
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+function pad(n){ return n < 10 ? '0'+n : ''+n; }
+function mmss(ms){
+  const s = Math.max(0, Math.floor(ms/1000));
+  return Math.floor(s/60) + ':' + pad(s%60);
+}
+function daysLeft(){
+  return Math.ceil((new Date(EXAM) - Date.now()) / 864e5);
+}
+function domainsOf(part){
+  const m = new Map();
+  for(const c of DECK){
+    if(part !== 'all' && c.part !== part) continue;
+    m.set(c.domain, (m.get(c.domain)||0) + 1);
+  }
+  return [...m.entries()];
+}
+function pool(part, domain){
+  return DECK.filter(c => (part === 'all' || c.part === part) && (domain === 'all' || c.domain === domain));
+}
+function learned(){
+  return DECK.filter(c => (S.cards[c.id]?.seen || 0) > 0).length;
+}
+function mastered(){
+  return DECK.filter(c => (S.cards[c.id]?.box || 0) >= 3).length;
+}
+function accuracy(){
+  let r = 0, w = 0;
+  for(const c of DECK){ const s = S.cards[c.id]; if(s){ r += s.right; w += s.wrong; } }
+  return r + w ? Math.round(100 * r / (r + w)) : 0;
+}
+
+/* ---------- render ---------- */
+function render(){
+  const app = document.getElementById('app');
+  if(view === 'home') app.innerHTML = homeHTML();
+  else if(view === 'study') app.innerHTML = studyHTML();
+  else app.innerHTML = sumHTML();
+  bind();
+}
+
+function homeHTML(){
+  const left = daysLeft();
+  const total = DECK.length;
+  const parts = ['all','I','II','III'];
+  const rows = domainsOf(pickPart).map(([d, n]) => {
+    const ids = DECK.filter(c => c.domain === d && (pickPart === 'all' || c.part === pickPart));
+    const m = ids.filter(c => (S.cards[c.id]?.box || 0) >= 3).length;
+    const pct = n ? Math.round(100 * m / n) : 0;
+    return `<button class="stat-row" data-domain="${esc(d)}" data-part="${esc(ids[0]?.part || 'all')}">
+      <span class="r1"><span class="nm">${esc(d)}</span><span class="ct">${m}/${n}</span></span>
+      <span class="bar"><i style="width:${pct}%"></i></span>
+    </button>`;
+  }).join('');
+
+  const n = pool(pickPart, 'all').length;
+
+  return `<div class="wrap top">
+    <h1>DOST-SEI Reviewer</h1>
+    <p class="sub">Exam 15 Nov 2026<span class="pill">${left > 0 ? left + ' days left' : left === 0 ? 'today' : 'passed'}</span></p>
+    <div class="stats">
+      <div class="stat"><div class="n">${total}</div><div class="l">Cards</div></div>
+      <div class="stat"><div class="n">${learned()}</div><div class="l">Studied</div></div>
+      <div class="stat"><div class="n">${accuracy()}%</div><div class="l">Accuracy</div></div>
+    </div>
+    <div class="seg" role="group" aria-label="Part filter">
+      ${parts.map(p => `<button data-part-pick="${p}" aria-pressed="${p === pickPart}">${p === 'all' ? 'All parts' : 'Part ' + p}</button>`).join('')}
+    </div>
+    <button class="btn primary" id="start">Study ${n} cards</button>
+    <h2 class="sec">Domains${pickPart === 'all' ? '' : ' · Part ' + pickPart}</h2>
+    ${rows || '<p class="sub">No cards yet.</p>'}
+    <footer>
+      ${total} cards · ${mastered()} mastered · progress saves on this device.<br>
+      Sources: DOST-SEI domain table only. Not past exam items.
+      <br><button id="reset">Reset progress</button>
+    </footer>
+  </div>`;
+}
+
+function studyHTML(){
+  const id = ses.queue[ses.i];
+  if(id === undefined) return sumHTML();
+  const c = DECK.find(x => x.id === id);
+  const partName = 'Part ' + c.part;
+
+  const grid = c.grid && c.grid.length
+    ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
+        [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
+          : ch === '.' ? '<span class="cell"></span>'
+          : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
+    : '';
+
+  const order = ses.order || [];
+  const nChoices = order.length;
+  const choices = order.map((txt, i) => {
+    let cls = 'choice';
+    if(ses.answered){
+      if(txt === c.answer) cls += ' correct';
+      else if(txt === ses.picked) cls += ' wrong';
+    }
+    return `<button class="${cls}" data-choice="${esc(txt)}" ${ses.answered ? 'disabled' : ''}>
+      <span class="k">${'ABCD'[i]}</span><span class="t">${esc(txt)}</span>
+    </button>`;
+  }).join('');
+
+  const fb = ses.answered ? (() => {
+    const ok = ses.picked === c.answer;
+    return `<div class="fb ${ok ? '' : 'bad'}">
+      <div class="h ${ok ? 'ok' : 'no'}">${ok ? 'Correct' : 'Answer: ' + esc(c.answer)}</div>
+      <p>${esc(c.why || '')}</p>
+      ${c.trap ? `<div class="trap">Trap: ${esc(c.trap)}</div>` : ''}
+    </div>
+    <div class="actions">
+      <button class="btn ghost" data-act="again">Again</button>
+      <button class="btn primary" data-act="next">Next</button>
+    </div>
+    <div class="kbd-hint"><kbd>Enter</kbd> next · <kbd>1-4</kbd> answer</div>`;
+  })() : `<div class="kbd-hint"><kbd>1-4</kbd> or tap to answer</div>`;
+
+  return `<div class="hud"><div class="in">
+      <button class="x" data-act="exit" aria-label="Exit session">×</button>
+      <div class="pbar"><i style="width:${Math.round(100 * ses.i / Math.max(1, ses.queue.length))}%"></i></div>
+      <span class="cnt">${Math.min(ses.i + 1, ses.queue.length)}/${ses.queue.length}</span>
+      <span class="clock" id="clock">0:00</span>
+    </div></div>
+    <div class="wrap">
+      <div class="qcard">
+        <div class="meta">
+          <span>${partName}</span><span class="dot"></span><span>${esc(c.domain)}</span>
+        </div>
+        <div class="subtle">
+          <span>${esc(c.sub || '')}</span>
+          <span class="diff" title="difficulty">${'●'.repeat(c.diff || 1)}${'○'.repeat(3 - (c.diff || 1))}</span>
+        </div>
+        <h2 class="q">${esc(c.q)}</h2>
+        ${grid}
+        ${nChoices ? `<div class="choices">${choices}</div>` : `<div class="typed">
+          <input id="typed" inputmode="text" autocomplete="off" placeholder="Type the answer" ${ses.answered ? 'disabled' : ''}>
+          <button class="btn primary" data-act="submit" ${ses.answered ? 'disabled' : ''}>Check</button>
+        </div>`}
+        ${fb}
+      </div>
+    </div>`;
+}
+
+function sumHTML(){
+  const total = ses.right + ses.wrong;
+  const pct = total ? Math.round(100 * ses.right / total) : 0;
+  const el = Date.now() - ses.t0;
+  const missedIds = [...new Set(ses.missed)];
+  const missedCards = missedIds.map(id => DECK.find(c => c.id === id)).filter(Boolean);
+  return `<div class="wrap top">
+    <p class="sub">Session complete</p>
+    <div class="big">${pct}%</div>
+    <p class="sub">${ses.right} correct of ${total} ${total === 1 ? 'answer' : 'answers'} · ${mmss(el)}</p>
+    <div class="sumgrid">
+      <div class="stat"><div class="n">${ses.right}</div><div class="l">Right</div></div>
+      <div class="stat"><div class="n">${ses.wrong}</div><div class="l">Wrong</div></div>
+      <div class="stat"><div class="n">${missedIds.length}</div><div class="l">To drill</div></div>
+    </div>
+    ${missedCards.length ? `<h2 class="sec">Missed</h2>${missedCards.slice(0, 12).map(c =>
+      `<div class="missed">${esc(c.q)}</div>`).join('')}` : ''}
+    ${missedCards.length
+      ? `<div class="actions" style="margin-top:22px">
+           <button class="btn ghost" data-act="home">Home</button>
+           <button class="btn primary" data-act="drill">Drill ${missedIds.length}</button>
+         </div>`
+      : `<div style="margin-top:22px"><button class="btn primary" data-act="home">Back to home</button></div>`}
+    <div class="kbd-hint"><kbd>Esc</kbd> home</div>
+  </div>`;
+}
+
+/* ---------- session ---------- */
+function startSession(part, domain, ids){
+  const cards = ids ? DECK.filter(c => ids.includes(c.id)) : pool(part, domain);
+  if(!cards.length) return;
+  const queue = cards
+    .map(c => ({id: c.id, k: (S.cards[c.id]?.box || 0) + Math.random() * 1.4}))
+    .sort((a, b) => a.k - b.k)
+    .map(x => x.id);
+  ses = {queue, i: 0, right: 0, wrong: 0, missed: [], answered: false, picked: null,
+         order: null, part, domain, t0: Date.now()};
+  view = 'study';
+  if(tick) clearInterval(tick);
+  tick = setInterval(() => {
+    const el = document.getElementById('clock');
+    if(!el || !ses) return;
+    el.textContent = mmss(Date.now() - ses.t0);
+    const limit = PART_MIN[DECK.find(c => c.id === ses.queue[ses.i])?.part] || 999;
+    el.classList.toggle('over', (Date.now() - ses.t0) / 60000 > limit);
+  }, 1000);
+  startCard();
+  render();
+}
+
+function nChoicesSafe(c){ return c.choices && c.choices.length > 0; }
+
+function answer(txt){
+  if(!ses || ses.answered) return;
+  const c = DECK.find(x => x.id === ses.queue[ses.i]);
+  if(!c) return;
+  const s = cs(c.id);
+  s.seen++; s.last = Date.now();
+  ses.answered = true;
+  ses.picked = txt;
+  const norm = v => String(v).toLowerCase().replace(/\s+/g, ' ').trim();
+  const ok = nChoicesSafe(c) ? txt === c.answer : norm(txt) === norm(c.answer);
+  if(ok){ s.right++; s.box = Math.min(5, s.box + 1); ses.right++; }
+  else { s.wrong++; s.box = 0; ses.wrong++; ses.missed.push(c.id); ses.queue.splice(ses.i + 2, 0, c.id); ses.requeued = true; }
+  save(); render();
+}
+
+function next(){
+  if(!ses) return;
+  ses.i++;
+  if(ses.i >= ses.queue.length){
+    if(tick) clearInterval(tick);
+    view = 'summary';
+    render();
+    return;
+  }
+  startCard();
+  render();
+}
+
+function startCard(){
+  ses.requeued = false;
+  const id = ses.queue[ses.i];
+  const c = DECK.find(x => x.id === id);
+  ses.answered = false; ses.picked = null;
+  ses.order = c.choices && c.choices.length ? shuffle(c.choices.slice()) : [];
+}
+function shuffle(a){
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* ---------- events ---------- */
+function bind(){
+  document.querySelectorAll('[data-part-pick]').forEach(b =>
+    b.onclick = () => { pickPart = b.dataset.partPick; render(); });
+
+  const start = document.getElementById('start');
+  if(start) start.onclick = () => startSession(pickPart, 'all');
+
+  document.querySelectorAll('[data-domain]').forEach(b =>
+    b.onclick = () => startSession(b.dataset.part, b.dataset.domain));
+
+  const reset = document.getElementById('reset');
+  if(reset) reset.onclick = () => {
+    if(confirm('Reset all progress on this device?')){ S = {cards:{}, missed:[]}; save(); render(); }
+  };
+
+  document.querySelectorAll('[data-choice]').forEach(b =>
+    b.onclick = () => answer(b.dataset.choice));
+
+  const exit = document.querySelector('[data-act="exit"]');
+  if(exit) exit.onclick = () => { if(tick) clearInterval(tick); ses = null; view = 'home'; render(); };
+
+  const again = document.querySelector('[data-act="again"]');
+  if(again) again.onclick = () => {
+    if(ses){ if(!ses.requeued) ses.queue.splice(ses.i + 2, 0, ses.queue[ses.i]); next(); }
+  };
+
+  const sub = document.querySelector('[data-act="submit"]');
+  if(sub) sub.onclick = () => {
+    const el = document.getElementById('typed');
+    if(el) answer(el.value.trim());
+  };
+  const typed = document.getElementById('typed');
+  if(typed) typed.onkeydown = e => { if(e.key === 'Enter'){ e.preventDefault(); answer(typed.value.trim()); } };
+
+  const nx = document.querySelector('[data-act="next"]');
+  if(nx) nx.onclick = next;
+
+  const home = document.querySelector('[data-act="home"]');
+  if(home) home.onclick = () => { ses = null; view = 'home'; render(); };
+
+  const home2 = document.querySelector('[data-act="home2"]');
+  if(home2) home2.onclick = () => { ses = null; view = 'home'; render(); };
+
+  const drill = document.querySelector('[data-act="drill"]');
+  if(drill) drill.onclick = () => {
+    const ids = [...new Set(ses.missed)];
+    ses = null;
+    startSession('all', 'all', ids);
+  };
+}
+
+document.addEventListener('keydown', e => {
+  if(view !== 'study' || !ses) {
+    if(e.key === 'Escape' && view === 'summary'){ ses = null; view = 'home'; render(); }
+    return;
+  }
+  if(e.key === 'Escape'){ if(tick) clearInterval(tick); ses = null; view = 'home'; render(); return; }
+  if(e.key === 'Enter' || e.key === ' '){
+    if(ses.answered) next();
+    e.preventDefault();
+    return;
+  }
+  if(/^[1-4]$/.test(e.key) && !ses.answered){
+    const txt = (ses.order || [])[+e.key - 1];
+    if(txt !== undefined) answer(txt);
+  }
+});
+
+/* boot */
+if('serviceWorker' in navigator && window.isSecureContext){
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+
+if(!DECK.length){
+  document.getElementById('app').innerHTML = '<div class="wrap top"><h1>No cards</h1><p class="sub">Run <code>node build.mjs</code> to build the deck.</p></div>';
+} else {
+  render();
+}
+</script>
+</body>
+</html>
