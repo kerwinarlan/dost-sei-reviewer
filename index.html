@@ -104,6 +104,36 @@ kbd{font:inherit;font-size:11px;padding:2px 5px;border:1px solid var(--line);bor
 .grid .cell.f{background:var(--ink)}
 .grid .cell.l{background:transparent}
 
+/* timed mock */
+.mockbar{position:sticky;top:0;z-index:6;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:9px 0}
+.mockbar .in{display:flex;align-items:center;gap:10px;max-width:720px;margin:0 auto;padding:0 18px}
+.mclock{font-variant-numeric:tabular-nums;font-weight:750;font-size:16px;letter-spacing:-.01em;min-width:62px}
+.mclock.low{color:var(--bad)}
+.mcount{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;flex:1}
+.mbtn{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:650;min-height:38px}
+.mbtn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.palette{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin:14px 0 4px;max-height:152px;overflow:auto}
+.pbtn{aspect-ratio:1;border-radius:6px;border:1px solid var(--line);font-size:11px;font-variant-numeric:tabular-nums;color:var(--muted);background:var(--surface);padding:0}
+.pbtn.done{background:color-mix(in srgb,var(--accent) 18%,transparent);border-color:transparent;color:var(--accent);font-weight:700}
+.pbtn.flag{box-shadow:inset 0 0 0 2px #c98a12}
+.pbtn.cur{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.choice.sel{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.choice.sel .k{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nav3{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:10px;margin-top:18px}
+.modal{position:fixed;inset:0;background:rgba(8,10,14,.55);display:grid;place-items:center;padding:22px;z-index:30}
+.modal .box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;max-width:360px;width:100%;box-shadow:var(--shadow)}
+.modal h3{margin:0 0 6px;font-size:17px}
+.modal p{margin:0 0 18px;font-size:14px;color:var(--muted);line-height:1.5}
+.modal .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.notice{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.rv{border-top:1px solid var(--line);padding:13px 0}
+.rv .qq{font-weight:600;font-size:14.5px;line-height:1.45}
+.rv .aa{font-size:13px;margin-top:7px;color:var(--muted)}
+.rv .aa b{color:var(--good);font-weight:650}
+.rv .aa .you{color:var(--bad)}
+.domrow{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px solid var(--line)}
+.domrow span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
+
 /* summary */
 .big{font-size:44px;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin:6px 0 0}
 .sumgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 20px}
@@ -123,6 +153,7 @@ const DECK = [{"id":"mech-001","part":"I","domain":"Creative Reasoning","sub":"G
 const KEY = 'dost.v1';
 const PART_LABEL = {I:'Creative Reasoning + Language', II:'Science', III:'Mathematics'};
 const PART_MIN = {I:45, II:65, III:70};
+const MOCK_PER_PART = 40;
 const EXAM = '2026-11-15T00:00:00+08:00';
 
 let S = load();
@@ -130,6 +161,9 @@ let view = 'home';
 let pickPart = 'all';
 let ses = null;
 let tick = null;
+let mock = null;
+let mtick = null;
+let mockPart = 'III';
 
 function load(){
   try{
@@ -152,6 +186,10 @@ function pad(n){ return n < 10 ? '0'+n : ''+n; }
 function mmss(ms){
   const s = Math.max(0, Math.floor(ms/1000));
   return Math.floor(s/60) + ':' + pad(s%60);
+}
+function mmssUp(ms){
+  const s = Math.max(0, Math.ceil(ms / 1000));
+  return Math.floor(s / 60) + ':' + pad(s % 60);
 }
 function daysLeft(){
   return Math.ceil((new Date(EXAM) - Date.now()) / 864e5);
@@ -184,7 +222,10 @@ function render(){
   const app = document.getElementById('app');
   if(view === 'home') app.innerHTML = homeHTML();
   else if(view === 'study') app.innerHTML = studyHTML();
-  else app.innerHTML = sumHTML();
+  else if(view === 'summary') app.innerHTML = sumHTML();
+  else if(view === 'mock-setup') app.innerHTML = mockSetupHTML();
+  else if(view === 'mock') app.innerHTML = mockHTML();
+  else app.innerHTML = mockResultHTML();
   bind();
 }
 
@@ -216,6 +257,7 @@ function homeHTML(){
       ${parts.map(p => `<button data-part-pick="${p}" aria-pressed="${p === pickPart}">${p === 'all' ? 'All parts' : 'Part ' + p}</button>`).join('')}
     </div>
     <button class="btn primary" id="start">Study ${n} cards</button>
+    <button class="btn" id="mock" style="margin-top:10px">Timed mock exam</button>
     <h2 class="sec">Domains${pickPart === 'all' ? '' : ' · Part ' + pickPart}</h2>
     ${rows || '<p class="sub">No cards yet.</p>'}
     <footer>
@@ -285,7 +327,7 @@ function studyHTML(){
         ${grid}
         ${nChoices ? `<div class="choices">${choices}</div>` : `<div class="typed">
           <input id="typed" inputmode="text" autocomplete="off" placeholder="Type the answer" ${ses.answered ? 'disabled' : ''}>
-          <button class="btn primary" data-act="submit" ${ses.answered ? 'disabled' : ''}>Check</button>
+          <button class="btn primary" data-act="submittxt" ${ses.answered ? 'disabled' : ''}>Check</button>
         </div>`}
         ${fb}
       </div>
@@ -321,6 +363,8 @@ function sumHTML(){
 
 /* ---------- session ---------- */
 function startSession(part, domain, ids){
+  if(mtick) clearInterval(mtick);
+  mock = null;
   const cards = ids ? DECK.filter(c => ids.includes(c.id)) : pool(part, domain);
   if(!cards.length) return;
   const queue = cards
@@ -387,6 +431,204 @@ function shuffle(a){
   return a;
 }
 
+/* ---------- timed mock ---------- */
+function mockSetupHTML(){
+  const parts = [['I','Part I'],['II','Part II'],['III','Part III'],['all','Full exam']];
+  const nParts = mockPart === 'all' ? 3 : 1;
+  const minutes = mockPart === 'all' ? 180 : PART_MIN[mockPart];
+  const n = MOCK_PER_PART * nParts;
+  return `<div class="wrap top">
+    <h1>Timed mock</h1>
+    <p class="sub">No feedback until you submit. One clock, like the real exam.</p>
+    <h2 class="sec">Scope</h2>
+    <div class="seg">${parts.map(([v, l]) =>
+      `<button data-mp="${v}" aria-pressed="${mockPart === v}">${l}</button>`).join('')}</div>
+    <div class="notice">${n} items · ${minutes} min · ${Math.round(minutes * 60 / n)} s per item. The clock stops at zero and submits for you.</div>
+    <button class="btn primary" id="mockStart" style="margin-top:16px">Start timed run</button>
+    <button class="btn ghost" id="mockBack" style="margin-top:8px">Back</button>
+  </div>`;
+}
+
+function mockHTML(){
+  if(!mock) return mockSetupHTML();
+  const id = mock.ids[mock.i];
+  const c = DECK.find(x => x.id === id);
+  if(!c) return mockSetupHTML();
+  const picked = mock.answers[id];
+  const order = mock.orders[id] || [];
+  const flagged = !!mock.flags[id];
+  const answered = mock.ids.filter(x => mock.answers[x]).length;
+  const last = mock.i === mock.ids.length - 1;
+
+  const grid = c.grid && c.grid.length
+    ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
+        [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
+          : ch === '.' ? '<span class="cell"></span>'
+          : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
+    : '';
+
+  const choices = order.map((txt, i) =>
+    `<button class="choice ${picked === txt ? 'sel' : ''}" data-pick="${esc(txt)}">
+      <span class="k">${'ABCD'[i]}</span><span class="t">${esc(txt)}</span>
+    </button>`).join('');
+
+  const palette = mock.showPal
+    ? `<div class="palette">${mock.ids.map((x, i) => {
+        const cls = ['pbtn', mock.answers[x] ? 'done' : '', mock.flags[x] ? 'flag' : '', i === mock.i ? 'cur' : ''].join(' ');
+        return `<button class="${cls}" data-goto="${i}" aria-label="Item ${i + 1}">${i + 1}</button>`;
+      }).join('')}</div>`
+    : '';
+
+  const confirmBox = mock.confirm
+    ? `<div class="modal"><div class="box">
+        <h3>${mock.confirm === 'exit' ? 'Discard this run?' : 'Submit now?'}</h3>
+        <p>${mock.confirm === 'exit'
+          ? 'The clock is running. Leaving throws away this attempt.'
+          : (mock.ids.length - answered) + ' of ' + mock.ids.length + ' items are unanswered. The score will count them as blank.'}</p>
+        <div class="row">
+          <button class="btn ghost" data-act="m-cancel">Keep going</button>
+          <button class="btn primary" data-act="m-confirm">${mock.confirm === 'exit' ? 'Discard' : 'Submit'}</button>
+        </div>
+      </div></div>`
+    : '';
+
+  return `<div class="mockbar"><div class="in">
+      <button class="x" data-act="m-exit" aria-label="Exit timed run">×</button>
+      <span class="mclock" id="mclock">${mmssUp(Math.max(0, mock.deadline - Date.now()))}</span>
+      <span class="mcount">${mock.i + 1}/${mock.ids.length}</span>
+      <button class="mbtn" data-act="m-pal">${mock.showPal ? 'Hide' : 'Items'}</button>
+      <button class="mbtn primary" data-act="m-submit">Submit</button>
+    </div></div>
+    <div class="wrap">
+      ${palette}
+      <div class="qcard">
+        <div class="meta"><span>Part ${c.part}</span><span class="dot"></span><span>${esc(c.domain)}</span></div>
+        <div class="subtle"><span>${esc(c.sub || '')}</span></div>
+        <h2 class="q">${esc(c.q)}</h2>
+        ${grid}
+        <div class="choices">${choices}</div>
+      </div>
+      <div class="nav3">
+        <button class="btn" data-act="m-prev" ${mock.i === 0 ? 'disabled' : ''}>Prev</button>
+        <button class="btn" data-act="m-flag">${flagged ? 'Unflag' : 'Flag'}</button>
+        <button class="btn primary" data-act="${last ? 'pal' : 'next'}">${last ? 'Review' : 'Next'}</button>
+      </div>
+      <div class="kbd-hint"><kbd>1-4</kbd> answer · <kbd>←</kbd><kbd>→</kbd> move · <kbd>Esc</kbd> exit</div>
+    </div>
+    ${confirmBox}`;
+}
+
+function mockResultHTML(){
+  const r = mock && mock.result;
+  if(!r) return mockSetupHTML();
+  const total = r.items.length;
+  const pct = total ? Math.round(100 * r.right / total) : 0;
+  const missed = r.items.filter(x => !x.ok);
+  const doms = Object.entries(r.per);
+  return `<div class="wrap top">
+    <p class="sub">Timed run complete · ${r.ms ? mmss(r.ms) : '0:00'} used</p>
+    <div class="big">${pct}%</div>
+    <p class="sub">${r.right} of ${total} correct · ${r.wrong} wrong · ${r.blank} blank</p>
+    <div class="sumgrid">
+      <div class="stat"><div class="n">${r.right}</div><div class="l">Right</div></div>
+      <div class="stat"><div class="n">${r.wrong}</div><div class="l">Wrong</div></div>
+      <div class="stat"><div class="n">${r.blank}</div><div class="l">Blank</div></div>
+    </div>
+    <h2 class="sec">By domain</h2>
+    ${doms.map(([d, v]) => `<div class="domrow"><span>${esc(d)}</span><span>${v.r}/${v.t}</span></div>`).join('')}
+    ${missed.length ? `<h2 class="sec">Missed items</h2>
+      ${missed.map(x => `<div class="rv">
+        <div class="qq">${esc(x.c.q)}</div>
+        <div class="aa">${x.picked ? `You picked <span class="you">${esc(x.picked)}</span>.` : 'Left blank.'} Answer: <b>${esc(x.c.answer)}</b>.</div>
+        <div class="aa">${esc(x.c.why || '')}</div>
+      </div>`).join('')}` : ''}
+    <div class="actions" style="margin-top:22px">
+      <button class="btn ghost" data-act="m-home">Home</button>
+      <button class="btn primary" data-act="m-retake">Retake</button>
+    </div>
+  </div>`;
+}
+
+function startMock(){
+  const parts = mockPart === 'all' ? ['I', 'II', 'III'] : [mockPart];
+  const ids = [];
+  for(const p of parts){
+    const pool = DECK.filter(c => c.part === p).map(c => c.id);
+    ids.push(...shuffle(pool.slice()).slice(0, Math.min(MOCK_PER_PART, pool.length)));
+  }
+  if(!ids.length) return;
+  const minutes = parts.reduce((sum, p) => sum + PART_MIN[p], 0);
+  mock = {
+    ids, answers: {}, flags: {}, orders: {}, i: 0,
+    startedAt: Date.now(), deadline: Date.now() + minutes * 60000,
+    scope: mockPart, showPal: false, confirm: null, result: null,
+  };
+  for(const id of ids){
+    const c = DECK.find(x => x.id === id);
+    mock.orders[id] = shuffle((c.choices || []).slice());
+  }
+  if(ses){ ses = null; }
+  if(tick) clearInterval(tick);
+  view = 'mock';
+  startMockClock();
+  render();
+}
+
+function startMockClock(){
+  if(mtick) clearInterval(mtick);
+  mtick = setInterval(() => {
+    if(!mock){ clearInterval(mtick); return; }
+    const left = Math.max(0, mock.deadline - Date.now());
+    const el = document.getElementById('mclock');
+    if(el) el.textContent = mmssUp(left);
+    if(el) el.classList.toggle('low', left < 60000);
+    if(left <= 0){ clearInterval(mtick); submitMock(true); }
+  }, 500);
+}
+
+function submitMock(auto){
+  if(!mock) return;
+  if(!auto){
+    const blanks = mock.ids.filter(id => !mock.answers[id]).length;
+    mock.confirm = blanks ? 'submit' : null;
+    if(!blanks){ finishMock(); return; }
+    render();
+    return;
+  }
+  finishMock();
+}
+
+function finishMock(){
+  if(mtick) clearInterval(mtick);
+  const items = mock.ids.map(id => {
+    const c = DECK.find(x => x.id === id);
+    const picked = mock.answers[id] || null;
+    return {id, c, picked, ok: !!picked && picked === c.answer};
+  });
+  const right = items.filter(x => x.ok).length;
+  const blank = items.filter(x => !x.picked).length;
+  const wrong = items.length - right - blank;
+  const per = {};
+  for(const it of items){
+    const d = it.c.domain;
+    per[d] = per[d] || {r: 0, t: 0};
+    per[d].t++;
+    if(it.ok) per[d].r++;
+  }
+  for(const it of items){
+    if(!it.picked) continue;
+    const st = cs(it.id);
+    st.seen++; st.last = Date.now();
+    if(it.ok){ st.right++; st.box = Math.min(5, st.box + 1); }
+    else { st.wrong++; st.box = 0; }
+  }
+  save();
+  mock.result = {items, right, wrong, blank, per, ms: Date.now() - mock.startedAt};
+  mock.confirm = null;
+  view = 'mock-result';
+  render();
+}
+
 /* ---------- events ---------- */
 function bind(){
   document.querySelectorAll('[data-part-pick]').forEach(b =>
@@ -414,7 +656,7 @@ function bind(){
     if(ses){ if(!ses.requeued) ses.queue.splice(ses.i + 2, 0, ses.queue[ses.i]); next(); }
   };
 
-  const sub = document.querySelector('[data-act="submit"]');
+  const sub = document.querySelector('[data-act="submittxt"]');
   if(sub) sub.onclick = () => {
     const el = document.getElementById('typed');
     if(el) answer(el.value.trim());
@@ -426,7 +668,7 @@ function bind(){
   if(nx) nx.onclick = next;
 
   const home = document.querySelector('[data-act="home"]');
-  if(home) home.onclick = () => { ses = null; view = 'home'; render(); };
+  if(home) home.onclick = () => { ses = null; if(mtick) clearInterval(mtick); mock = null; view = 'home'; render(); };
 
   const home2 = document.querySelector('[data-act="home2"]');
   if(home2) home2.onclick = () => { ses = null; view = 'home'; render(); };
@@ -437,9 +679,78 @@ function bind(){
     ses = null;
     startSession('all', 'all', ids);
   };
+
+  /* timed mock */
+  document.querySelectorAll('[data-mp]').forEach(b =>
+    b.onclick = () => { mockPart = b.dataset.mp; render(); });
+  const mstart = document.getElementById('mockStart');
+  if(mstart) mstart.onclick = startMock;
+  const mback = document.getElementById('mockBack');
+  if(mback) mback.onclick = () => { view = 'home'; render(); };
+  const mopen = document.getElementById('mock');
+  if(mopen) mopen.onclick = () => { view = 'mock-setup'; render(); };
+
+  document.querySelectorAll('[data-pick]').forEach(b =>
+    b.onclick = () => {
+      if(!mock) return;
+      mock.answers[mock.ids[mock.i]] = b.dataset.pick;
+      render();
+    });
+  document.querySelectorAll('[data-goto]').forEach(b =>
+    b.onclick = () => { if(mock){ mock.i = +b.dataset.goto; render(); } });
+
+  const act = (name, fn) => {
+    const el = document.querySelector('[data-act="' + name + '"]');
+    if(el) el.onclick = fn;
+  };
+  act('m-prev', () => { if(mock && mock.i > 0){ mock.i--; render(); } });
+  act('m-next', () => { if(mock && mock.i < mock.ids.length - 1){ mock.i++; render(); } });
+  act('m-flag', () => {
+    if(!mock) return;
+    const id = mock.ids[mock.i];
+    if(mock.flags[id]) delete mock.flags[id]; else mock.flags[id] = true;
+    render();
+  });
+  act('m-pal', () => { if(mock){ mock.showPal = !mock.showPal; render(); } });
+  act('m-submit', () => submitMock(false));
+  act('m-cancel', () => { if(mock){ mock.confirm = null; render(); } });
+  act('m-exit', () => { if(mock){ mock.confirm = 'exit'; render(); } });
+  act('m-confirm', () => {
+    if(!mock) return;
+    if(mock.confirm === 'exit'){
+      if(mtick) clearInterval(mtick);
+      mock = null; view = 'home'; render();
+    } else {
+      finishMock();
+    }
+  });
+  act('m-retake', () => { if(mock) mockPart = mock.scope; startMock(); });
+  act('m-home', () => {
+    if(mtick) clearInterval(mtick);
+    mock = null; view = 'home'; render();
+  });
 }
 
 document.addEventListener('keydown', e => {
+  if(view === 'mock' && mock){
+    if(mock.confirm){
+      if(e.key === 'Enter'){ e.preventDefault(); document.querySelector('[data-act="m-confirm"]')?.click(); }
+      return;
+    }
+    if(e.key === 'Escape'){ mock.confirm = 'exit'; render(); return; }
+    if(/^[1-4]$/.test(e.key)){
+      const txt = (mock.orders[mock.ids[mock.i]] || [])[+e.key - 1];
+      if(txt !== undefined){ mock.answers[mock.ids[mock.i]] = txt; render(); }
+      return;
+    }
+    if(e.key === 'ArrowRight' || e.key === 'Enter'){
+      if(mock.i < mock.ids.length - 1){ mock.i++; render(); }
+      e.preventDefault();
+      return;
+    }
+    if(e.key === 'ArrowLeft'){ if(mock.i > 0){ mock.i--; render(); } return; }
+    return;
+  }
   if(view !== 'study' || !ses) {
     if(e.key === 'Escape' && view === 'summary'){ ses = null; view = 'home'; render(); }
     return;

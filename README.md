@@ -48,6 +48,16 @@ Six-day schedule: [`PLAN.md`](PLAN.md). One domain per day, with the daily loop.
 
 Progress saves in the browser. Order is weak cards first. Wrong cards return later in the same session and collect in a drill queue at the end.
 
+### Timed mock
+
+Tap **Timed mock exam** on the home screen, pick a scope, and start.
+
+- 40 items per part, drawn at random from that part's deck.
+- Clock is the real part time: 45, 65, or 70 minutes. Full exam is 180.
+- No feedback while the clock runs. Flag items, jump with the item palette, change answers.
+- At zero the run submits itself.
+- Result: score, wrong and blank counts, per-domain breakdown, and a correction list with the worked answer for every missed item.
+
 Keyboard: `1`-`4` answer, `Enter` next, `Esc` exit.
 Offline: the page registers a service worker on the live site. Add it to the home screen after the first load.
 
@@ -89,5 +99,6 @@ Seven writers produced one deck each against a fixed card contract. Three indepe
 ## Known limits
 
 - Spatial items use character grids, not rendered 3D figures. Nets, rotation, reflection, and folding work in that format. Block-stack items are worded.
-- The clock shows elapsed time against the part budget. It does not force a stop.
+- In study mode the clock only shows elapsed time. Use the timed mock for a forced stop.
+- The timed mock uses 40 items per part. The real item count is not public, so the per-item pace is a practice pace, not a claim about the booklet.
 - One explanation per card. No separate worked solution sheet.

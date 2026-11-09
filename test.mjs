@@ -167,6 +167,42 @@ try {
   const wideOk = await ev(`document.querySelector('.wrap').getBoundingClientRect().width <= 720`);
   check('desktop layout caps at 720px', wideOk);
   await shot('10-desktop.png');
+
+  // timed mock mode
+  await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
+  await send('Page.navigate', { url: `${HTTP}/index.html` });
+  await wait(700);
+  await ev(`document.getElementById('mock').click()`);
+  await wait(250);
+  check('mock setup renders', await ev(`!!document.getElementById('mockStart')`));
+  await shot('13-mock-setup.png');
+  await ev(`document.getElementById('mockStart').click()`);
+  await wait(350);
+  const m1 = await ev(`({ clock: !!document.getElementById('mclock'), n: mock.ids.length, choices: document.querySelectorAll('[data-pick]').length })`);
+  check('timed run starts with clock and 40 items', m1.clock && m1.n === 40 && m1.choices >= 3, JSON.stringify(m1));
+  await shot('11-mock.png');
+
+  await ev(`document.querySelector('[data-pick]').click()`);
+  await wait(150);
+  check('selection locks without feedback', await ev(`document.querySelectorAll('.choice.sel').length === 1 && !document.querySelector('.fb')`));
+
+  await ev(`document.querySelector('[data-act="m-pal"]').click()`);
+  await wait(150);
+  check('palette shows all items', await ev(`document.querySelectorAll('[data-goto]').length === 40`));
+  await ev(`document.querySelectorAll('[data-goto]')[3].click()`);
+  await wait(150);
+  check('palette jump works', await ev(`mock.i === 3`));
+
+  await ev(`document.querySelector('[data-act="m-submit"]').click()`);
+  await wait(200);
+  check('submit warns about blanks', await ev(`!!document.querySelector('.modal')`));
+  await shot('14-mock-submit.png');
+  await ev(`document.querySelector('[data-act="m-confirm"]').click()`);
+  await wait(350);
+  const res = await ev(`mock.result ? { total: mock.result.items.length, blank: mock.result.blank, right: mock.result.right } : null`);
+  check('result counts blanks', !!res && res.total === 40 && res.blank === 39, JSON.stringify(res));
+  check('result screen renders', await ev(`!!document.querySelector('.big')`));
+  await shot('12-mock-result.png');
 } catch (e) {
   console.error('ERROR', e.message);
   failures++;

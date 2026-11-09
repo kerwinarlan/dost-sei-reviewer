@@ -16,6 +16,7 @@ Rules:
 - One pass through a new deck per day. Do not reread.
 - A card you miss comes back in the same session. Do not stop to study it.
 - A deck is done when the drill queue is empty, not when the cards run out.
+- One timed mock per part from Day 3 onward. Use the score, not the feeling.
 
 ## Schedule
 
@@ -26,7 +27,7 @@ Rules:
 | 3 | 11 Nov | Biology and Chemistry (80) | §9 chemistry | 80 |
 | 4 | 12 Nov | Physics (55) + Earth and Space (40) | §8 physics, §10 earth and space | 95 |
 | 5 | 13 Nov | Abstract Reasoning (70) + Verbal (40) | §11 abstract rules | 110 |
-| 6 | 14 Nov | Language and Literature (40) + every missed card | §1 timing, §12 tactics | 40 + drill |
+| 6 | 14 Nov | Language and Literature (40) + every missed card + one timed mock | §1 timing, §12 tactics | 40 + drill |
 | 7 | 15 Nov | No new cards. Traps only. | — | 0 |
 
 Day 4 and Day 5 are heavy. Split them into two sittings.
