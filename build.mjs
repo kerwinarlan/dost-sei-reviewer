@@ -60,6 +60,7 @@ for (const file of files) {
       trap: c.trap || '',
       diff: Math.min(3, Math.max(1, c.diff || 1)),
       ...(c.grid ? { grid: c.grid } : {}),
+      ...(c.fig ? { fig: c.fig } : {}),
     });
   }
 }

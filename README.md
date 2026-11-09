@@ -4,7 +4,7 @@ Flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examinati
 
 **Open: <https://kerwinarlan.github.io/dost-sei-reviewer/>**
 
-470 cards, offline, no account. Built for one tutee sitting the exam on **15 Nov 2026**.
+482 cards, offline, no account. Built for one tutee sitting the exam on **15 Nov 2026**.
 
 ---
 
@@ -33,7 +33,8 @@ Total: 180 minutes. Part I carries two domains inside one 45-minute block.
 | Verbal and Language | I | 80 | `deck/verbal-language.json` |
 | Abstract Reasoning: mechanical and spatial | I | 70 | `deck/abstract-reasoning.json` |
 | Abstract Reasoning: series, coding, odd one out | I | 30 | `deck/abstract-extra.json` |
-| **Total** | | **470** | |
+| Abstract Reasoning: drawn figures | I | 12 | `deck/abstract-figures.json` |
+| **Total** | | **482** | |
 
 Every card carries a worked answer, the trap a student usually falls into, and a difficulty mark. 30 percent easy, 50 percent moderate, 20 percent hard.
 
@@ -74,7 +75,7 @@ node test.mjs    # headless Chrome check, writes shots/
 ## Repo layout
 
 ```
-index.html          generated single-file app, 470 cards inlined
+index.html          generated single-file app, 482 cards inlined
 src/app.html        app template, DECK marker
 deck/*.json         card source, one file per deck
 deck/SCHEMA.md      card contract

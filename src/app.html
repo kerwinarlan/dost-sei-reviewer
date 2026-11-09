@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f6f4ef">
 <title>DOST-SEI Reviewer</title>
-<meta name="description" content="Offline flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examination. 470 cards across Mathematics, Science, Abstract Reasoning, Verbal Reasoning, and Language.">
+<meta name="description" content="Offline flashcard reviewer and formula cheatsheet for the DOST-SEI Scholarship Examination. 482 cards across Mathematics, Science, Abstract Reasoning, Verbal Reasoning, and Language.">
 <meta property="og:title" content="DOST-SEI Reviewer">
-<meta property="og:description" content="470 offline flashcards and a formula cheatsheet for the DOST-SEI Scholarship Examination.">
+<meta property="og:description" content="482 offline flashcards and a formula cheatsheet for the DOST-SEI Scholarship Examination.">
 <meta property="og:type" content="website">
 <style>
 :root{
@@ -98,6 +98,8 @@ kbd{font:inherit;font-size:11px;padding:2px 5px;border:1px solid var(--line);bor
 .typed input{flex:1;min-height:52px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 14px;font:inherit}
 .typed input:focus{outline:2px solid var(--accent);outline-offset:1px}
 .typed .btn{width:auto;padding:0 18px}
+
+.fig{width:100%;max-width:340px;display:block;margin:2px 0 16px;color:var(--ink)}
 
 /* grid figure */
 .grid{display:grid;grid-template-columns:repeat(var(--cols),1fr);gap:2px;max-width:min(190px,44vw);margin:2px 0 18px;padding:4px;border-radius:8px;background:color-mix(in srgb,var(--line) 40%,transparent)}
@@ -283,18 +285,34 @@ function homeHTML(){
   </div>`;
 }
 
+function figSVG(f){
+  if(!f || !f.shapes) return '';
+  const w = f.w || 300, h = f.h || 200;
+  const out = [];
+  for(const s of f.shapes){
+    if(s.k === 'r') out.push(`<rect x="${s.x}" y="${s.y}" width="${s.w}" height="${s.h}" ${s.f ? 'fill="currentColor"' : 'fill="none" stroke="currentColor" stroke-width="1.4"'}/>`);
+    else if(s.k === 'c') out.push(`<circle cx="${s.x}" cy="${s.y}" r="${s.r}" ${s.f ? 'fill="currentColor"' : 'fill="none" stroke="currentColor" stroke-width="1.4"'}/>`);
+    else if(s.k === 'l') out.push(`<line x1="${s.x1}" y1="${s.y1}" x2="${s.x2}" y2="${s.y2}" stroke="currentColor" stroke-width="1.4"${s.d ? ' stroke-dasharray="5 4"' : ''}/>`);
+    else if(s.k === 'p') out.push(`<polygon points="${(s.pts || []).map(q => q.join(',')).join(' ')}" ${s.f ? 'fill="currentColor"' : 'fill="none" stroke="currentColor" stroke-width="1.4"'}/>`);
+    else if(s.k === 't') out.push(`<text x="${s.x}" y="${s.y}" fill="currentColor" font-size="${s.sz || 13}" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">${esc(s.t)}</text>`);
+  }
+  return `<svg class="fig" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="figure">${out.join('')}</svg>`;
+}
+
 function studyHTML(){
   const id = ses.queue[ses.i];
   if(id === undefined) return sumHTML();
   const c = DECK.find(x => x.id === id);
   const partName = 'Part ' + c.part;
 
-  const grid = c.grid && c.grid.length
-    ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
-        [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
-          : ch === '.' ? '<span class="cell"></span>'
-          : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
-    : '';
+  const grid = c.fig
+    ? figSVG(c.fig)
+    : (c.grid && c.grid.length
+      ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
+          [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
+            : ch === '.' ? '<span class="cell"></span>'
+            : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
+      : '');
 
   const order = ses.order || [];
   const nChoices = order.length;
@@ -436,7 +454,9 @@ function startCard(){
   const id = ses.queue[ses.i];
   const c = DECK.find(x => x.id === id);
   ses.answered = false; ses.picked = null;
-  ses.order = c.choices && c.choices.length ? shuffle(c.choices.slice()) : [];
+  ses.order = (c.choices && c.choices.length)
+    ? (c.fig ? c.choices.slice() : shuffle(c.choices.slice()))
+    : [];
 }
 function shuffle(a){
   for(let i = a.length - 1; i > 0; i--){
@@ -475,12 +495,14 @@ function mockHTML(){
   const answered = mock.ids.filter(x => mock.answers[x]).length;
   const last = mock.i === mock.ids.length - 1;
 
-  const grid = c.grid && c.grid.length
-    ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
-        [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
-          : ch === '.' ? '<span class="cell"></span>'
-          : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
-    : '';
+  const grid = c.fig
+    ? figSVG(c.fig)
+    : (c.grid && c.grid.length
+      ? `<div class="grid" style="--cols:${c.grid[0].length}">${c.grid.map(row =>
+          [...row].map(ch => ch === '#' ? '<span class="cell f"></span>'
+            : ch === '.' ? '<span class="cell"></span>'
+            : `<span class="cell l">${esc(ch)}</span>`).join('')).join('')}</div>`
+      : '');
 
   const choices = order.map((txt, i) =>
     `<button class="choice ${picked === txt ? 'sel' : ''}" data-pick="${esc(txt)}">
@@ -580,7 +602,7 @@ function startMock(){
   };
   for(const id of ids){
     const c = DECK.find(x => x.id === id);
-    mock.orders[id] = shuffle((c.choices || []).slice());
+    mock.orders[id] = c.fig ? (c.choices || []).slice() : shuffle((c.choices || []).slice());
   }
   if(ses){ ses = null; }
   if(tick) clearInterval(tick);

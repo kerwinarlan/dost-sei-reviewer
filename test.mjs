@@ -83,6 +83,15 @@ try {
   await ev(`document.querySelector('[data-act="exit"]').click()`);
   await wait(200);
 
+  const figN = await ev(`DECK.filter(c => c.fig).length`);
+  check('figure cards present', figN >= 12, `${figN} drawn figures`);
+  await ev(`startSession('all', 'all', ['fig-001'])`);
+  await wait(300);
+  check('figure renders as svg', await ev(`document.querySelectorAll('svg.fig rect').length > 10`));
+  await shot('15-figure.png');
+  await ev(`document.querySelector('[data-act="exit"]').click()`);
+  await wait(200);
+
   await ev(`document.getElementById('start').click()`);
   await wait(250);
   const q = await ev(`document.querySelector('.q')?.textContent || ''`);
